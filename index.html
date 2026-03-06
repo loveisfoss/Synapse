@@ -11,45 +11,52 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream: #f0f5f1;
-      --bone: #d4e2d8;
-      --warm-dark: #132218;
-      --brown: #2a4a35;
-      --gold: #4a9068;
-      --gold-light: #7abf97;
-      --muted: #5a7a65;
+      --bg: #0B240F;
+      --bg-deep: #071608;
+      --surface: rgba(255,255,255,0.08);
+      --bone: rgba(255,255,255,0.25);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255,255,255,0.85);
+      --text-muted: rgba(255,255,255,0.60);
+      --accent: #a8e6c3;
+      --accent-light: #d4f5e4;
+      --btn-bg: #ffffff;
+      --btn-text: #0B240F;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background-color: var(--cream);
-      color: var(--warm-dark);
+      background-color: var(--bg);
+      color: var(--text-primary);
       font-family: 'Jost', sans-serif;
       font-weight: 300;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
+    /* ── BACKGROUND TEXTURE ── */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(74,144,104,0.10) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 70% at 85% 85%, rgba(42,74,53,0.08) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(0,0,0,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 70% at 85% 85%, rgba(0,0,0,0.10) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
 
+    /* ── THIN TOP BAR ── */
     .top-bar {
       position: fixed;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+      background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
       z-index: 100;
     }
 
+    /* ── MAIN CARD ── */
     .card {
       position: relative;
       z-index: 1;
@@ -63,13 +70,14 @@
       gap: 0;
     }
 
+    /* ── PHOTO ── */
     .photo-wrap {
       width: 130px;
       height: 130px;
       border-radius: 50%;
       overflow: hidden;
-      border: 2px solid var(--gold);
-      box-shadow: 0 0 0 6px rgba(74,144,104,0.15), 0 12px 40px rgba(19,34,24,0.18);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 6px rgba(168,230,195,0.20), 0 12px 40px rgba(0,0,0,0.25);
       margin-bottom: 32px;
       opacity: 0;
       transform: translateY(14px);
@@ -80,26 +88,33 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center top;
     }
 
+    /* ── NAME & TITLES ── */
     .name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 6vw, 2.6rem);
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
       font-weight: 400;
       letter-spacing: 0.02em;
       text-align: center;
       line-height: 1.15;
-      color: var(--warm-dark);
+      color: var(--text-primary);
+      white-space: nowrap;
       opacity: 0;
       transform: translateY(14px);
       animation: fadeUp 0.9s 0.15s ease forwards;
+    }
+
+    @media (max-width: 360px) {
+      .name { white-space: normal; }
     }
 
     .specialty {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.05rem;
       font-style: italic;
-      color: var(--gold);
+      color: var(--accent);
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-top: 8px;
@@ -112,12 +127,13 @@
     .divider {
       width: 48px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
       margin: 28px auto;
       opacity: 0;
       animation: fadeIn 1s 0.4s ease forwards;
     }
 
+    /* ── INFO BLOCKS ── */
     .info-section {
       width: 100%;
       display: flex;
@@ -139,47 +155,55 @@
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--accent);
       margin-bottom: 6px;
       font-weight: 500;
+      text-align: center;
     }
 
     .info-text {
       font-size: 0.92rem;
-      color: var(--brown);
+      color: var(--text-secondary);
       line-height: 1.75;
       font-weight: 300;
+      text-align: center;
     }
 
     .info-text strong {
       font-weight: 500;
-      color: var(--warm-dark);
+      color: var(--text-primary);
     }
 
+    /* ── CTA BUTTON ── */
     .btn-primary {
       display: inline-block;
       margin-top: 4px;
       padding: 14px 36px;
-      background: var(--warm-dark);
-      color: var(--cream);
+      background: var(--btn-bg);
+      color: var(--btn-text);
       text-decoration: none;
       font-family: 'Jost', sans-serif;
       font-size: 0.78rem;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      border: 1px solid var(--warm-dark);
-      transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      border: none;
+      border-radius: 50px;
+      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
       opacity: 0;
       transform: translateY(12px);
       animation: fadeUp 0.8s 0.75s ease forwards;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
     }
 
     .btn-primary:hover {
-      background: transparent;
-      color: var(--warm-dark);
+      background: var(--accent-light);
+      color: var(--bg-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
     }
 
+    /* ── CONTACT ICONS ── */
     .contact-row {
       display: flex;
       gap: 20px;
@@ -197,16 +221,17 @@
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: var(--muted);
-      background: rgba(255,255,255,0.5);
-      transition: border-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+      color: var(--text-primary);
+      background: rgba(255,255,255,0.12);
+      transition: border-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.25s;
     }
 
     .contact-link:hover {
-      border-color: var(--gold);
-      color: var(--gold);
+      border-color: var(--accent);
+      color: var(--bg-deep);
+      background: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(74,144,104,0.22);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.20);
     }
 
     .contact-link svg {
@@ -219,6 +244,7 @@
       stroke-linejoin: round;
     }
 
+    /* ── FOOTER NOTE ── */
     .footer-note {
       margin-top: 48px;
       font-size: 0.7rem;
@@ -228,6 +254,7 @@
       animation: fadeIn 1.2s 1.1s ease forwards;
     }
 
+    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
@@ -235,6 +262,7 @@
       to { opacity: 1; }
     }
 
+    /* ── MOBILE ── */
     @media (max-width: 480px) {
       .card { padding: 72px 28px 48px; }
       .contact-row { gap: 14px; }
@@ -247,11 +275,15 @@
 
 <main class="card">
 
+  <!-- Profile photo -->
   <div class="photo-wrap">
-    <img src="profile.png" alt="Κωνσταντίνος Πολυχρονίδης" />
+    <img
+      src="profile.png"
+      alt="Κωνσταντίνος Πολυχρονίδης"
+    />
   </div>
 
-  <h1 class="name">Κωνσταντίνος<br>Πολυχρονίδης</h1>
+  <h1 class="name">Κωνσταντίνος Πολυχρονίδης</h1>
   <p class="specialty">Νευρολόγος</p>
 
   <div class="divider"></div>
@@ -281,7 +313,7 @@
         <strong>Τρίτη &amp; Πέμπτη</strong>&ensp;11:00 – 14:00 &amp; 18:00 – 21:00<br>
         <strong>Παρασκευή</strong>&ensp;09:00 – 14:00 &amp; 18:00 – 21:00
       </p>
-      <p class="info-text" style="margin-top:8px; font-style:italic; font-size:0.82rem; color:var(--muted);">
+      <p class="info-text" style="margin-top:8px; font-style:italic; font-size:0.82rem; color:var(--text-muted);">
         Επίσκεψη κατά προτίμηση κατόπιν ραντεβού.
       </p>
     </div>
@@ -292,24 +324,29 @@
     Κλείσε Ραντεβού Online
   </a>
 
+  <!-- Contact icon row -->
   <div class="contact-row">
+
+    <!-- Phone -->
     <a class="contact-link" href="tel:2351105725" title="Τηλέφωνο">
       <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
     </a>
+
+    <!-- Mobile -->
     <a class="contact-link" href="tel:6984135227" title="Κινητό">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
     </a>
-    <a class="contact-link" href="mailto:polychronidiskostas@gmail.com" title="Email">
+
+    <!-- Email -->
+    <a class="contact-link" href="/cdn-cgi/l/email-protection#1a6a7576637972687574737e73697175696e7b695a7d777b737634797577" title="Email">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
+
+    <!-- Location -->
     <a class="contact-link" href="https://maps.app.goo.gl/gVkSxZb3sXk3981x9/" target="_blank" rel="noopener" title="Χάρτης">
       <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
     </a>
+
   </div>
 
-  <p class="footer-note">© 2025 Κωνσταντίνος Πολυχρονίδης</p>
-
-</main>
-
-</body>
-</html>
+  <p class="footer-note">© 2025 Κωνσταντίνος Π�
