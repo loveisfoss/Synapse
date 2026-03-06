@@ -1,40 +1,118 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body{
+
+font-family: Arial, Helvetica, sans-serif;
+
+background:#0f0f0f;
+
+color:white;
+
+margin:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
 }
 
-/* Body styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+.card{
+
+max-width:420px;
+
+padding:40px;
+
+text-align:center;
+
 }
 
-/* Container */
-.container {
-    background: #fff;
-    padding: 40px;
-    text-align: center;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+.profile{
+
+width:140px;
+
+border-radius:50%;
+
+margin-bottom:20px;
+
 }
 
-/* Header */
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+h1{
+
+font-size:28px;
+
+margin-bottom:15px;
+
 }
 
-/* Info text */
-.info p {
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    color: #555;
+.subtitle{
+
+color:#cccccc;
+
+line-height:1.6;
+
+margin-bottom:30px;
+
+}
+
+.section{
+
+margin-top:30px;
+
+}
+
+.section h3{
+
+margin-bottom:10px;
+
+}
+
+.note{
+
+font-size:14px;
+
+color:#aaaaaa;
+
+margin-top:10px;
+
+}
+
+.buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+margin-top:15px;
+
+}
+
+.buttons a{
+
+background:white;
+
+color:black;
+
+text-decoration:none;
+
+padding:14px;
+
+border-radius:8px;
+
+font-weight:bold;
+
+transition:0.2s;
+
+}
+
+.buttons a:hover{
+
+background:#dddddd;
+
+}    color: #555;
 }
 
 /* Links */
