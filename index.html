@@ -6,22 +6,21 @@
   <title>Κωνσταντίνος Πολυχρονίδης – Νευρολόγος</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0B240F;
-      --bg-deep: #071608;
-      --surface: rgba(255,255,255,0.08);
-      --bone: rgba(255,255,255,0.25);
-      --text-primary: #ffffff;
+      --bg:             #0B240F;
+      --bg-deep:        #071608;
+      --bone:           rgba(255,255,255,0.22);
+      --text-primary:   #ffffff;
       --text-secondary: rgba(255,255,255,0.85);
-      --text-muted: rgba(255,255,255,0.60);
-      --accent: #a8e6c3;
-      --accent-light: #d4f5e4;
-      --btn-bg: #ffffff;
-      --btn-text: #0B240F;
+      --text-muted:     rgba(255,255,255,0.55);
+      --accent:         #a8e6c3;
+      --accent-light:   #d4f5e4;
+      --btn-bg:         #ffffff;
+      --btn-text:       #0B240F;
     }
 
     html { scroll-behavior: smooth; }
@@ -29,25 +28,24 @@
     body {
       background-color: var(--bg);
       color: var(--text-primary);
-      font-family: 'Jost', sans-serif;
+      font-family: 'Lato', sans-serif;
       font-weight: 300;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* ── BACKGROUND TEXTURE ── */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
       background-image:
-        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(0,0,0,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 70% at 85% 85%, rgba(0,0,0,0.10) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 15% 10%, rgba(0,0,0,0.15) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 70% at 85% 85%, rgba(0,0,0,0.12) 0%, transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
 
-    /* ── THIN TOP BAR ── */
+    /* ── TOP BAR ── */
     .top-bar {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -56,29 +54,29 @@
       z-index: 100;
     }
 
-    /* ── MAIN CARD ── */
+    /* ── CARD ── */
     .card {
       position: relative;
       z-index: 1;
-      max-width: 520px;
+      max-width: 760px;
       margin: 0 auto;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 80px 40px 60px;
-      gap: 0;
+      padding: 80px 32px 64px;
     }
 
     /* ── PHOTO ── */
     .photo-wrap {
-      width: 200px;
-      height: 200px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       overflow: hidden;
       border: 2px solid var(--accent);
-      box-shadow: 0 0 0 6px rgba(168,230,195,0.20), 0 12px 40px rgba(0,0,0,0.25);
-      margin-bottom: 32px;
+      box-shadow: 0 0 0 6px rgba(168,230,195,0.18), 0 14px 44px rgba(0,0,0,0.35);
+      margin-bottom: 24px;
+      flex-shrink: 0;
       opacity: 0;
       transform: translateY(14px);
       animation: fadeUp 0.9s ease forwards;
@@ -91,14 +89,13 @@
       object-position: center top;
     }
 
-    /* ── NAME & TITLES ── */
+    /* ── NAME & SPECIALTY ── */
     .name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.6rem, 5vw, 2.6rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
       text-align: center;
-      line-height: 1.15;
       color: var(--text-primary);
       white-space: nowrap;
       opacity: 0;
@@ -106,101 +103,109 @@
       animation: fadeUp 0.9s 0.15s ease forwards;
     }
 
-    @media (max-width: 360px) {
-      .name { white-space: normal; }
-    }
-
     .specialty {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-style: italic;
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-style: normal;
+      font-weight: 400;
       color: var(--accent);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-top: 8px;
       text-align: center;
+      white-space: nowrap;
       opacity: 0;
       transform: translateY(14px);
       animation: fadeUp 0.9s 0.25s ease forwards;
     }
 
     .divider {
-      width: 32px;
+      width: 40px;
       height: 1px;
-      background: rgba(168,230,195,0.25);
-      margin: 18px auto;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 28px auto;
       opacity: 0;
       animation: fadeIn 1s 0.4s ease forwards;
     }
 
-    /* ── INFO BLOCKS ── */
+    /* ── INFO SECTION ── */
     .info-section {
       width: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 28px;
       margin-bottom: 36px;
     }
 
     .info-block {
+      width: 100%;
+      text-align: center;
       opacity: 0;
       transform: translateY(12px);
     }
-
     .info-block:nth-child(1) { animation: fadeUp 0.8s 0.45s ease forwards; }
     .info-block:nth-child(2) { animation: fadeUp 0.8s 0.55s ease forwards; }
     .info-block:nth-child(3) { animation: fadeUp 0.8s 0.65s ease forwards; }
 
     .info-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.2em;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 6px;
-      font-weight: 500;
-      text-align: center;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .info-text {
-      font-size: 1.05rem;
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
       color: var(--text-secondary);
-      line-height: 1.75;
+      line-height: 1.9;
       font-weight: 300;
-      text-align: center;
+    }
+
+    /* Each logical line stays on one line if screen allows */
+    .info-text .line {
+      display: block;
+      white-space: nowrap;
+      line-height: 2;
     }
 
     .info-text strong {
-      font-weight: 500;
+      font-weight: 700;
       color: var(--text-primary);
     }
 
-    /* ── CTA BUTTON ── */
+    /* ── BUTTON ── */
     .btn-primary {
+      font-family: 'Lato', sans-serif;
       display: inline-block;
-      margin-top: 4px;
-      padding: 14px 36px;
+      padding: 14px 44px;
       background: var(--btn-bg);
       color: var(--btn-text);
       text-decoration: none;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.88rem;
-      font-weight: 500;
+      font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+      font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       border: none;
       border-radius: 50px;
-      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      white-space: nowrap;
+      transition: background 0.3s, color 0.3s, transform 0.2s, box-shadow 0.3s;
       opacity: 0;
       transform: translateY(12px);
       animation: fadeUp 0.8s 0.75s ease forwards;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.22);
     }
 
     .btn-primary:hover {
       background: var(--accent-light);
       color: var(--bg-deep);
       transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.30);
     }
 
     /* ── CONTACT DETAILS ── */
@@ -208,6 +213,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 20px;
       margin-top: 32px;
       opacity: 0;
@@ -215,27 +221,29 @@
     }
 
     .contact-text-link {
+      font-family: 'Lato', sans-serif;
       color: var(--accent);
       text-decoration: none;
+      white-space: nowrap;
+      font-size: clamp(0.95rem, 2vw, 1.05rem);
       transition: opacity 0.2s;
     }
+    .contact-text-link:hover { opacity: 0.7; }
 
-    .contact-text-link:hover {
-      opacity: 0.75;
-    }
-
-    /* ── CONTACT ICONS ── */
+    /* ── ICON ROW ── */
     .contact-row {
       display: flex;
-      gap: 20px;
+      gap: 16px;
       margin-top: 36px;
+      justify-content: center;
+      flex-wrap: nowrap;
       opacity: 0;
-      animation: fadeIn 1s 0.9s ease forwards;
+      animation: fadeIn 1s 0.95s ease forwards;
     }
 
     .contact-link {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       border: 1px solid var(--bone);
       display: flex;
@@ -243,50 +251,67 @@
       justify-content: center;
       text-decoration: none;
       color: var(--text-primary);
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
       transition: border-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s, background 0.25s;
     }
-
     .contact-link:hover {
       border-color: var(--accent);
       color: var(--bg-deep);
       background: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.20);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
     }
-
     .contact-link svg {
-      width: 18px;
-      height: 18px;
-      stroke: currentColor;
-      fill: none;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      width: 18px; height: 18px;
+      stroke: currentColor; fill: none;
+      stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
     }
 
-    /* ── FOOTER NOTE ── */
+    /* ── FOOTER ── */
     .footer-note {
+      font-family: 'Lato', sans-serif;
       margin-top: 48px;
-      font-size: 0.7rem;
-      color: var(--bone);
+      font-size: 0.72rem;
+      color: var(--text-muted);
       letter-spacing: 0.1em;
       opacity: 0;
       animation: fadeIn 1.2s 1.1s ease forwards;
     }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { to { opacity: 1; } }
+
+    /* ═══════════════════════════════
+       DESKTOP (≥ 640px)
+    ═══════════════════════════════ */
+    @media (min-width: 640px) {
+      .card { padding: 90px 64px 72px; }
+      .photo-wrap { width: 170px; height: 170px; }
+
+      /* Single-column info, sections stack vertically */
+      .info-section {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      /* Side-by-side contact details removed — always stacked */
     }
 
-    /* ── MOBILE ── */
+    /* ═══════════════════════════════
+       MOBILE (≤ 480px)
+    ═══════════════════════════════ */
     @media (max-width: 480px) {
-      .card { padding: 72px 28px 48px; }
-      .contact-row { gap: 14px; }
+      .card { padding: 72px 20px 52px; }
+      /* Allow wrapping on narrow screens */
+      .name                { white-space: normal; }
+      .specialty           { white-space: normal; }
+      .info-label          { white-space: normal; }
+      .info-text .line     { white-space: normal; }
+      .btn-primary         { white-space: normal; text-align: center; padding: 13px 28px; }
+      .contact-text-link   { white-space: normal; word-break: break-all; }
+      .contact-row         { gap: 10px; }
     }
   </style>
 </head>
@@ -296,12 +321,8 @@
 
 <main class="card">
 
-  <!-- Profile photo -->
   <div class="photo-wrap">
-    <img
-      src="profile.png"
-      alt="Κωνσταντίνος Πολυχρονίδης"
-    />
+    <img src="profile.png" alt="Κωνσταντίνος Πολυχρονίδης" />
   </div>
 
   <h1 class="name">Κωνσταντίνος Πολυχρονίδης</h1>
@@ -314,27 +335,26 @@
     <div class="info-block">
       <div class="info-label">Σπουδές &amp; Εκπαίδευση</div>
       <p class="info-text">
-        Απόφοιτος Ιατρικής Σχολής ΑΠΘ<br>
-        Ειδικευθείς στο <strong>North Älvsborg County Hospital</strong>, Trollhättan, Σουηδία
+        <span class="line">Απόφοιτος Ιατρικής Σχολής ΑΠΘ</span>
+        <span class="line">Ειδικευθείς στο North Älvsborg County Hospital, Trollhättan, Σουηδία</span>
       </p>
     </div>
 
     <div class="info-block">
       <div class="info-label">Διεύθυνση Ιατρείου</div>
       <p class="info-text">
-        25ης Μαρτίου 12<br>60132 Κατερίνη
+        <span class="line">25ης Μαρτίου 12</span>
+        <span class="line">60132 Κατερίνη</span>
       </p>
     </div>
 
     <div class="info-block">
       <div class="info-label">Ωράριο Λειτουργίας</div>
       <p class="info-text">
-        <strong>Δευτέρα &amp; Τετάρτη</strong>&ensp;09:00 – 14:00<br>
-        <strong>Τρίτη &amp; Πέμπτη</strong>&ensp;11:00 – 14:00 &amp; 18:00 – 21:00<br>
-        <strong>Παρασκευή</strong>&ensp;09:00 – 14:00 &amp; 18:00 – 21:00
-      </p>
-      <p class="info-text" style="margin-top:8px; font-style:italic; font-size:0.95rem; color:var(--text-muted);">
-        Επίσκεψη κατά προτίμηση κατόπιν ραντεβού.
+        <span class="line"><strong>Δευτέρα &amp; Τετάρτη</strong>&ensp;09:00 – 14:00</span>
+        <span class="line"><strong>Τρίτη &amp; Πέμπτη</strong>&ensp;11:00 – 14:00 &amp; 18:00 – 21:00</span>
+        <span class="line"><strong>Παρασκευή</strong>&ensp;09:00 – 14:00 &amp; 18:00 – 21:00</span>
+        <span class="line" style="font-style:italic; color:var(--text-muted); margin-top:4px; display:block;">Επίσκεψη κατά προτίμηση κατόπιν ραντεβού.</span>
       </p>
     </div>
 
@@ -345,42 +365,36 @@
   </a>
 
   <div class="contact-details">
-    <div class="info-block" style="animation-delay: 0.85s;">
+    <div class="info-block">
       <div class="info-label">Τηλέφωνο επικοινωνίας</div>
-      <p class="info-text"><a href="tel:2351105725" class="contact-text-link">2351105725</a></p>
+      <p class="info-text">
+        <a href="tel:2351105725" class="contact-text-link">2351105725</a>
+      </p>
     </div>
-    <div class="info-block" style="animation-delay: 0.95s;">
+    <div class="info-block">
       <div class="info-label">Διεύθυνση email</div>
-      <p class="info-text"><a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology@gmail.com</a></p>
+      <p class="info-text">
+        <a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology@gmail.com</a>
+      </p>
     </div>
   </div>
 
-  <!-- Contact icon row -->
   <div class="contact-row">
-
-    <!-- Phone -->
     <a class="contact-link" href="tel:2351105725" title="Τηλέφωνο">
       <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.8 19.8 0 0 1 1.61 3.4 2 2 0 0 1 3.59 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.62-1.62a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
     </a>
-
-    <!-- Mobile -->
     <a class="contact-link" href="tel:6984135227" title="Κινητό">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
     </a>
-
-    <!-- Email -->
-    <a class="contact-link" href="/cdn-cgi/l/email-protection#1a6a7576637972687574737e73697175696e7b695a7d777b737634797577" title="Email">
+    <a class="contact-link" href="mailto:polychronidis.neurology@gmail.com" title="Email">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
-
-    <!-- Location -->
     <a class="contact-link" href="https://maps.app.goo.gl/gVkSxZb3sXk3981x9/" target="_blank" rel="noopener" title="Χάρτης">
       <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
     </a>
-
   </div>
 
-    <p class="footer-note">© 2025 Κωνσταντίνος Πολυχρονίδης</p>
+  <p class="footer-note">© 2025 Κωνσταντίνος Πολυχρονίδης</p>
 
 </main>
 
