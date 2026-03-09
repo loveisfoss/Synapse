@@ -470,7 +470,6 @@
       gap: 20px;
       flex-wrap: wrap;
       backdrop-filter: blur(8px);
-      animation: fadeIn 0.4s ease;
     }
     #cookie-banner p {
       font-family: 'Lato', sans-serif;
@@ -556,7 +555,7 @@
     <div class="info-block">
       <div class="info-label">Διεύθυνση email</div>
       <p class="info-text">
-        <a href="/cdn-cgi/l/email-protection#afdfc0c3d6ccc7ddc0c1c6cbc6dc81c1cadaddc0c3c0c8d6efc8c2cec6c381ccc0c2" class="contact-text-link"><span class="__cf_email__" data-cfemail="81f1eeedf8e2e9f3eeefe8e5e8f2afefe4f4f3eeedeee6f8c1e6ece0e8edafe2eeec">[email&#160;protected]</span></a>
+        <a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology@gmail.com</a>
       </p>
     </div>
   </div>
@@ -568,9 +567,41 @@
     <a class="contact-link" href="tel:6984135227" title="Κινητό">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
     </a>
-    <a class="contact-link" href="/cdn-cgi/l/email-protection#13637c7f6a707b617c7d7a777a603d7d7666617c7f7c746a53747e727a7f3d707c7e" title="Email">
+    <a class="contact-link" href="mailto:polychronidis.neurology@gmail.com" title="Email">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
     <a class="contact-link" href="https://maps.app.goo.gl/gVkSxZb3sXk3981x9/" target="_blank" rel="noopener" title="Χάρτ�
     <a class="contact-link" href="https://maps.app.goo.gl/gVkSxZb3sXk3981x9/" target="_blank" rel="noopener" title="Χάρτης">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    </a>
+  </div>
+
+  <p class="footer-note">&copy; 2025 Κωνσταντίνος Πολυχρονίδης</p>
+
+</main>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" style="display:none;">
+    <p>Η ιστοσελίδα χρησιμοποιεί Google Analytics για στατιστικά επισκεψιμότητας. Τα δεδομένα δεν μοιράζονται με τρίτους.</p>
+    <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
+    <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
+  </div>
+  <script>
+    (function() {
+      var consent = localStorage.getItem('cookie_consent');
+      if (!consent) {
+        document.getElementById('cookie-banner').style.display = 'flex';
+      }
+    })();
+    function cookieAccept() {
+      localStorage.setItem('cookie_consent', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+      loadAnalytics();
+    }
+    function cookieDecline() {
+      localStorage.setItem('cookie_consent', 'declined');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
