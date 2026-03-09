@@ -103,13 +103,22 @@
     ]
   }
   </script>
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZL6HK1Y9G"></script>
+  <!-- Google Analytics (loads only after consent) -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NZL6HK1Y9G');
+    function loadAnalytics() {
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-NZL6HK1Y9G';
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-NZL6HK1Y9G');
+    }
+    if (localStorage.getItem('cookie_consent') === 'accepted') {
+      loadAnalytics();
+    }
   </script>
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -444,6 +453,49 @@
       .contact-text-link   { white-space: normal; word-break: break-all; }
       .contact-row         { gap: 10px; }
     }
+
+    /* ── COOKIE BANNER ── */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(7, 22, 8, 0.97);
+      border-top: 1px solid rgba(168,230,195,0.2);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      backdrop-filter: blur(8px);
+      animation: fadeIn 0.4s ease;
+    }
+    #cookie-banner p {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .cookie-btn {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      padding: 8px 20px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .cookie-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+    .cookie-btn.accept { background: var(--accent); color: var(--bg-deep); }
+    .cookie-btn.decline { background: transparent; color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.2); }
   </style>
 </head>
 <body>
@@ -504,7 +556,7 @@
     <div class="info-block">
       <div class="info-label">Διεύθυνση email</div>
       <p class="info-text">
-        <a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#afdfc0c3d6ccc7ddc0c1c6cbc6dc81c1cadaddc0c3c0c8d6efc8c2cec6c381ccc0c2" class="contact-text-link"><span class="__cf_email__" data-cfemail="81f1eeedf8e2e9f3eeefe8e5e8f2afefe4f4f3eeedeee6f8c1e6ece0e8edafe2eeec">[email&#160;protected]</span></a>
       </p>
     </div>
   </div>
@@ -516,17 +568,9 @@
     <a class="contact-link" href="tel:6984135227" title="Κινητό">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
     </a>
-    <a class="contact-link" href="mailto:polychronidis.neurology@gmail.com" title="Email">
+    <a class="contact-link" href="/cdn-cgi/l/email-protection#13637c7f6a707b617c7d7a777a603d7d7666617c7f7c746a53747e727a7f3d707c7e" title="Email">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
     <a class="contact-link" href="https://maps.app.goo.gl/gVkSxZb3sXk3981x9/" target="_blank" rel="noopener" title="Χάρτ�
     <a class="contact-link" href="https://maps.app.goo.gl/gVkSxZb3sXk3981x9/" target="_blank" rel="noopener" title="Χάρτης">
-      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-    </a>
-  </div>
-
-  <p class="footer-note">&copy; 2025 Κωνσταντίνος Πολυχρονίδης</p>
-
-</main>
-</body>
-</html>
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-
