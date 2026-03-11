@@ -220,17 +220,16 @@ body::before {
   backdrop-filter: blur(8px);
 }
 
-.hamburger span {
+.hamburger .icon-menu,
+.hamburger .icon-close {
+  width: 22px; height: 22px;
   display: block;
-  width: 22px; height: 2px;
-  background: var(--text-primary);
-  border-radius: 2px;
-  transition: transform 0.3s, opacity 0.3s;
+  color: var(--text-primary);
 }
 
-.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); border-radius: 0; }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); border-radius: 0; }
+.hamburger .icon-close { display: none; }
+.hamburger.open .icon-menu { display: none; }
+.hamburger.open .icon-close { display: block; }
 
 /* Overlay */
 .sidebar-overlay {
@@ -594,7 +593,8 @@ body::before {
 </aside>
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 <button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Μενού">
-  <span></span><span></span><span></span>
+  <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
 </button>
 <div class="main-content">
 <main class="card">
