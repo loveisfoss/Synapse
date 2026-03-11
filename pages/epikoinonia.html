@@ -568,3 +568,19 @@ body::before {
     var s=document.createElement('script'); s.async=true;
     s.src='https://www.googletagmanager.com/gtag/js?id=G-NZL6HK1Y9G';
     document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag; gtag('js',new Date()); gtag('config','G-NZL6HK1Y9G');
+  }
+  if(localStorage.getItem('cookie_consent')==='accepted'){loadAnalytics();}
+  function openMaps(e) {
+    e.preventDefault();
+    var url = e.currentTarget.href;
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      window.location = 'geo:40.2704275,22.5095192';
+      setTimeout(function(){ window.open(url,'_blank'); }, 500);
+    } else { window.open(url,'_blank'); }
+  }
+</script>
+</body>
+</html>
