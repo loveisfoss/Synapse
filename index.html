@@ -593,7 +593,7 @@ body::before {
   <div class="sidebar-footer">&copy; 2025 Κωνσταντίνος Πολυχρονίδης</div>
 </aside>
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
-<button class="hamburger" id="hamburger" aria-label="Μενού">
+<button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Μενού">
   <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
 </button>
@@ -639,7 +639,7 @@ body::before {
     <div class="info-block">
       <div class="info-label">Διεύθυνση email</div>
       <p class="info-text">
-        <a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology@gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#cabaa5a6b3a9a2b8a5a4a3aea3b9e4a4afbfb8a5a6a5adb38aada7aba3a6e4a9a5a7" class="contact-text-link"><span class="__cf_email__" data-cfemail="d2a2bdbeabb1baa0bdbcbbb6bba1fcbcb7a7a0bdbebdb5ab92b5bfb3bbbefcb1bdbf">[email&#160;protected]</span></a>
       </p>
     </div>
   </div>
@@ -650,7 +650,7 @@ body::before {
     <a class="contact-link" href="tel:6984135227" title="Κινητό">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
     </a>
-    <a class="contact-link" href="mailto:polychronidis.neurology@gmail.com" title="Email">
+    <a class="contact-link" href="/cdn-cgi/l/email-protection#dbabb4b7a2b8b3a9b4b5b2bfb2a8f5b5beaea9b4b7b4bca29bbcb6bab2b7f5b8b4b6" title="Email">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
     <a class="contact-link" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener" title="Χάρτης">
@@ -664,16 +664,7 @@ body::before {
   <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var hamburger = document.getElementById('hamburger');
-    if (hamburger) {
-      hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleSidebar();
-      });
-    }
-  });
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
     var h = document.getElementById('hamburger');
@@ -722,13 +713,4 @@ body::before {
   })();
   function cookieAccept() {
     localStorage.setItem('cookie_consent','accepted');
-    document.getElementById('cookie-banner').style.display='none';
-    loadAnalytics();
-  }
-  function cookieDecline() {
-    localStorage.setItem('cookie_consent','declined');
-    document.getElementById('cookie-banner').style.display='none';
-  }
-  function loadAnalytics() {
-    var s=document.createElement('script'); s.async=true;
-    s.src='https://www.googletagmanage
+    document.getElementById('cookie-banner').
