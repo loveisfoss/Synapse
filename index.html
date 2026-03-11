@@ -225,12 +225,13 @@ body::before {
   width: 22px; height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, width 0.3s;
 }
 
-.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+/* When open: hide middle, cross top and bottom into clean X */
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); border-radius: 1px; }
+.hamburger.open span:nth-child(2) { width: 0; opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); border-radius: 1px; }
 
 /* Overlay */
 .sidebar-overlay {
@@ -681,6 +682,28 @@ body::before {
     var sub = btn.nextElementSibling;
     sub.classList.toggle('open');
   }
+  // Prevent sidebar touch scroll from propagating to body
+  (function() {
+    var sidebar = document.getElementById('sidebar');
+    var startY = 0;
+    sidebar.addEventListener('touchstart', function(e) {
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+    sidebar.addEventListener('touchmove', function(e) {
+      var scrollable = sidebar.scrollHeight > sidebar.clientHeight;
+      if (!scrollable) {
+        e.preventDefault();
+        return;
+      }
+      var atTop = sidebar.scrollTop === 0;
+      var atBottom = sidebar.scrollTop + sidebar.clientHeight >= sidebar.scrollHeight;
+      var movingDown = e.touches[0].clientY < startY;
+      var movingUp = e.touches[0].clientY > startY;
+      if ((atTop && movingUp) || (atBottom && movingDown)) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+  })();
   // Cookie
   (function() {
     if (!localStorage.getItem('cookie_consent')) {
