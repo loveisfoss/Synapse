@@ -465,12 +465,12 @@ body::before {
 }
 .btn-primary:hover { background:var(--accent-light); color:var(--bg-deep); transform:translateY(-2px); box-shadow:0 8px 28px rgba(0,0,0,0.3); }
 
-.contact-details { width:100%; display:flex; flex-direction:column; align-items:center; gap:20px; margin-top:32px; opacity:0; animation:fadeIn 1s 0.85s ease forwards; }
-.contact-text-link { color:var(--accent); text-decoration:none; font-size:clamp(0.95rem, 1.8vw, 1.05rem); transition:opacity 0.2s; }
-.contact-text-link:hover { opacity:0.7; }
+.-details { width:100%; display:flex; flex-direction:column; align-items:center; gap:20px; margin-top:32px; opacity:0; animation:fadeIn 1s 0.85s ease forwards; }
+.-text-link { color:var(--accent); text-decoration:none; font-size:clamp(0.95rem, 1.8vw, 1.05rem); transition:opacity 0.2s; }
+.-text-link:hover { opacity:0.7; }
 
-.contact-row { display:flex; gap:16px; margin-top:36px; justify-content:center; flex-wrap:nowrap; opacity:0; animation:fadeIn 1s 0.95s ease forwards; }
-.contact-link { width:48px; height:48px; border-radius:50%; border:1px solid var(--bone); display:flex; align-items:center; justify-content:center; text-decoration:none; color:var(--text-primary); background:rgba(255,255,255,0.08); transition:border-color 0.25s,color 0.25s,transform 0.25s,box-shadow 0.25s,background 0.25s; }
+.-row { display:flex; gap:16px; margin-top:36px; justify-content:center; flex-wrap:nowrap; opacity:0; animation:fadeIn 1s 0.95s ease forwards; }
+.-link { width:48px; height:48px; border-radius:50%; border:1px solid var(--bone); display:flex; align-items:center; justify-content:center; text-decoration:none; color:var(--text-primary); background:rgba(255,255,255,0.08); transition:border-color 0.25s,color 0.25s,transform 0.25s,box-shadow 0.25s,background 0.25s; }
 .contact-link:hover { border-color:var(--accent); color:var(--bg-deep); background:var(--accent); transform:translateY(-3px); box-shadow:0 6px 18px rgba(0,0,0,0.25); }
 .contact-link svg { width:18px; height:18px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
 
@@ -614,7 +614,7 @@ body::before {
     </div>
     <div class="info-block">
       <div class="info-label">Διεύθυνση Ιατρείου</div>
-      <a class="contact-link"
+      <a class="contact-text-link"
          href="https://www.google.com/maps/place/Κωνσταντίνος+Πολυχρονίδης/@40.2704315,22.5046483,17z"
          target="_blank"
          rel="noopener"
