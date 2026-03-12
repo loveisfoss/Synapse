@@ -559,6 +559,187 @@ body::before {
   .contact-text-link { white-space: normal; word-break: break-all; }
   .contact-row { gap: 10px; }
 }
+
+/* GALLERY */
+.gallery-intro {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 52px;
+  opacity: 0;
+  animation: fadeIn 0.9s 0.35s ease forwards;
+}
+
+.gallery-section {
+  margin-bottom: 64px;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.gallery-section:nth-child(1) { animation: fadeUp 0.8s 0.4s ease forwards; }
+.gallery-section:nth-child(2) { animation: fadeUp 0.8s 0.55s ease forwards; }
+.gallery-section:nth-child(3) { animation: fadeUp 0.8s 0.7s ease forwards; }
+.gallery-section:nth-child(4) { animation: fadeUp 0.8s 0.85s ease forwards; }
+
+.gallery-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.gallery-section-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.gallery-section-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(168,230,195,0.15);
+}
+
+/* Layout A: full-width hero + two below */
+.layout-hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 260px 200px;
+  gap: 10px;
+}
+
+.layout-hero-split .photo-hero {
+  grid-column: 1 / -1;
+}
+
+/* Layout B: two equal */
+.layout-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  height: 240px;
+}
+
+/* Layout C: single wide */
+.layout-single {
+  height: 280px;
+}
+
+/* Layout D: three equal */
+.layout-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  height: 220px;
+}
+
+.photo-slot {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(168,230,195,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.photo-slot:hover {
+  transform: scale(1.015);
+  border-color: rgba(168,230,195,0.35);
+}
+
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.photo-slot:hover img {
+  transform: scale(1.04);
+}
+
+/* Placeholder for demo */
+.photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: rgba(168,230,195,0.35);
+}
+
+.photo-placeholder svg {
+  width: 32px; height: 32px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.2;
+}
+
+.photo-placeholder span {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* placeholder color per section */
+.ph-anamoni  { background: rgba(20, 55, 35, 0.6); }
+.ph-grafeio  { background: rgba(15, 40, 50, 0.6); }
+.ph-exetast  { background: rgba(40, 20, 50, 0.6); }
+.ph-exterior { background: rgba(50, 35, 15, 0.6); }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 24px;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.lightbox-close:hover { color: #fff; }
+
+@media (max-width: 600px) {
+  .layout-hero-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 160px 160px;
+  }
+  .layout-hero-split .photo-hero { grid-column: 1; }
+  .layout-two { grid-template-columns: 1fr; height: auto; }
+  .layout-two .photo-slot { height: 180px; }
+  .layout-single { height: 200px; }
+  .layout-three { grid-template-columns: 1fr; height: auto; }
+  .layout-three .photo-slot { height: 160px; }
+}
 </style>
 </head>
 <body>
@@ -598,14 +779,72 @@ body::before {
   <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
 </button>
 <div class="main-content">
-<div class="page-wrap">
+<div class="page-wrap" style="max-width:860px;">
   <h1 class="page-title">Το Ιατρείο</h1>
-  <p class="page-subtitle">Το Ιατρείο</p>
+  <p class="page-subtitle">Νευρολογικό Ιατρείο Κατερίνης</p>
   <div class="divider"></div>
-  <div class="prose">
-    <p>Φωτογραφίες του ιατρείου θα αναρτηθούν σύντομα.</p>
+
+  <p class="gallery-intro">Ένας χώρος σχεδιασμένος για την άνεση και την ασφάλεια των ασθενών. Σύγχρονος εξοπλισμός, ήρεμη ατμόσφαιρα και προσωπική προσέγγιση σε κάθε επίσκεψη.</p>
+
+  <!-- 1. Χώρος Αναμονής -->
+  <div class="gallery-section">
+    <div class="gallery-section-header">
+      <span class="gallery-section-label">Χώρος Αναμονής</span>
+      <div class="gallery-section-line"></div>
+    </div>
+    <div class="layout-single">
+      <div class="photo-slot" style="height:100%;" onclick="openLightbox(this)">
+        <img src="../assets/iatreio1.png" alt="Χώρος Αναμονής" />
+      </div>
+    </div>
   </div>
+
+  <!-- 2. Γραφείο Ιατρού -->
+  <div class="gallery-section">
+    <div class="gallery-section-header">
+      <span class="gallery-section-label">Γραφείο Ιατρού</span>
+      <div class="gallery-section-line"></div>
+    </div>
+    <div class="layout-single">
+      <div class="photo-slot" style="height:100%;" onclick="openLightbox(this)">
+        <img src="../assets/iatreio2.png" alt="Γραφείο Ιατρού" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Εξεταστήριο -->
+  <div class="gallery-section">
+    <div class="gallery-section-header">
+      <span class="gallery-section-label">Εξεταστήριο</span>
+      <div class="gallery-section-line"></div>
+    </div>
+    <div class="layout-single">
+      <div class="photo-slot" style="height:100%;" onclick="openLightbox(this)">
+        <img src="../assets/iatreio3.png" alt="Εξεταστήριο" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Εξωτερικό Κτιρίου -->
+  <div class="gallery-section">
+    <div class="gallery-section-header">
+      <span class="gallery-section-label">Εξωτερικό Κτιρίου</span>
+      <div class="gallery-section-line"></div>
+    </div>
+    <div class="layout-single">
+      <div class="photo-slot" style="height:100%;" onclick="openLightbox(this)">
+        <img src="../assets/iatreio4.png" alt="Εξωτερικό Κτιρίου" />
+      </div>
+    </div>
+  </div>
+
 </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <img id="lightbox-img" src="" alt="" />
 </div>
 <div id="cookie-banner" style="display:none;">
   <p>Η ιστοσελίδα χρησιμοποιεί Google Analytics για στατιστικά επισκεψιμότητας. Τα δεδομένα δεν μοιράζονται με τρίτους.</p>
@@ -613,6 +852,19 @@ body::before {
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
 <script>
+  function openLightbox(slot) {
+    var img = slot.querySelector('img');
+    if (!img) return;
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
     var h = document.getElementById('hamburger');
