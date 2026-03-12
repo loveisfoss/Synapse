@@ -379,7 +379,7 @@ body::before {
   width: 100%;
   height: 100%;
   border: 0;
-  filter: saturate(0.3) brightness(0.7) hue-rotate(80deg);
+  filter: saturate(0.5) brightness(0.9) hue-rotate(80deg);
 }
 
 /* Cookie */
@@ -417,11 +417,11 @@ body::before {
   <ul class="sidebar-nav">
     <li><a href="../index.html">Αρχική Σελίδα</a></li>
     <li>
-      <button onclick="toggleSubmenu(this)" class="">
+      <button onclick="toggleSubmenu(this)" class="open">
         Νευρολογικές παθήσεις
         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <ul class="submenu">
+      <ul class="submenu open">
         <li><a href="pathiseis.html">Γενικά</a></li>
         <li><a href="kefalalagia.html">Κεφαλαλγία</a></li>
         <li><a href="iligos.html">Ίλιγγος</a></li>
@@ -434,8 +434,8 @@ body::before {
       </ul>
     </li>
     <li><a href="biografiko.html">Βιογραφικό Σημείωμα</a></li>
-    <li><a href="epikoinonia.html" class="active">Επικοινωνία</a></li>
     <li><a href="fotografies.html">Το Ιατρείο</a></li>
+    <li><a href="epikoinonia.html" class="active">Επικοινωνία</a></li>
   </ul>
   <div class="sidebar-footer">&copy; 2025 Κωνσταντίνος Πολυχρονίδης</div>
 </aside>
@@ -473,7 +473,7 @@ body::before {
     </a>
 
     <!-- Email -->
-    <a class="contact-card" href="mailto:polychronidis.neurology&#64;gmail.com">
+    <a class="contact-card" href="/cdn-cgi/l/email-protection#eb9b8487928883998485828f8298c5858e9e998487848c92cdc8dddfd08c868a8287c5888486">
       <div class="contact-card-icon">
         <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
@@ -515,7 +515,7 @@ body::before {
   <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
     var h = document.getElementById('hamburger');
@@ -570,9 +570,4 @@ body::before {
     document.head.appendChild(s);
     window.dataLayer=window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
-    window.gtag=gtag; gtag('js',new Date()); gtag('config','G-NZL6HK1Y9G');
-  }
-  if(localStorage.getItem('cookie_consent')==='accepted'){loadAnalytics();}
-</script>
-</body>
-</html>
+    window.gta
