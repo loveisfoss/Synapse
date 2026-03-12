@@ -417,11 +417,11 @@ body::before {
   <ul class="sidebar-nav">
     <li><a href="../index.html">Αρχική Σελίδα</a></li>
     <li>
-      <button onclick="toggleSubmenu(this)" class=" open">
+      <button onclick="toggleSubmenu(this)" class="">
         Νευρολογικές παθήσεις
         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
-      <ul class="submenu open">
+      <ul class="submenu">
         <li><a href="pathiseis.html">Γενικά</a></li>
         <li><a href="kefalalagia.html">Κεφαλαλγία</a></li>
         <li><a href="iligos.html">Ίλιγγος</a></li>
@@ -429,13 +429,13 @@ body::before {
         <li><a href="anoia.html">Άνοια</a></li>
         <li><a href="epilipsia.html">Επιληψία</a></li>
         <li><a href="sklirynsi.html">Πολλαπλή Σκλήρυνση</a></li>
-        <li><a href="als.html">Νόσος του Κινητικού Νευρώνα</a></li>
-        <li><a href="narkolipsia.html">Ναρκοληψία</a></li>
+        <li><a href="als.html">Νόσος του Κινητικού Νεύρωνα</a></li>
+        <li><a href="narkolipsia.html">Narκοληψία</a></li>
       </ul>
     </li>
     <li><a href="biografiko.html">Βιογραφικό Σημείωμα</a></li>
-    <li><a href="fotografies.html">Το Ιατρείο</a></li>
     <li><a href="epikoinonia.html" class="active">Επικοινωνία</a></li>
+    <li><a href="fotografies.html">Το Ιατρείο</a></li>
   </ul>
   <div class="sidebar-footer">&copy; 2025 Κωνσταντίνος Πολυχρονίδης</div>
 </aside>
@@ -488,8 +488,8 @@ body::before {
         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
       <div class="contact-card-label">Διεύθυνση Ιατρείου</div>
-      <div class="contact-card-value">25ης Μαρτίου 12<br>60132 Κατερίνη</div>
-      <div class="contact-card-sub">Άνοιγμα χάρτη</div>
+      <div class="contact-card-value">25ης Μαρτίου 12</div>
+      <div class="contact-card-sub">60132 Κατερίνη — Άνοιγμα χάρτη</div>
     </a>
 
   </div>
@@ -499,7 +499,7 @@ body::before {
     <div class="map-label">Χάρτης</div>
     <div class="map-frame">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.!2d22.5095192!3d40.2704275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83e2e2e2e2e2f%3A0x0!2s25%CE%B7%CF%82+%CE%9C%CE%B1%CF%81%CF%84%CE%AF%CE%BF%CF%85+12%2C+%CE%9A%CE%B1%CF%84%CE%B5%CF%81%CE%AF%CE%BD%CE%B7!5e0!3m2!1sel!2sgr!4v1700000000000!5m2!1sel!2sgr"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.0!2d22.5095192!3d40.2704275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135803b0bf36710d%3A0x537be7e37e26fc1a!2z25is+Martiou+12!5e0!3m2!1sel!2sgr!4v1700000000000!5m2!1sel!2sgr"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
@@ -573,14 +573,6 @@ body::before {
     window.gtag=gtag; gtag('js',new Date()); gtag('config','G-NZL6HK1Y9G');
   }
   if(localStorage.getItem('cookie_consent')==='accepted'){loadAnalytics();}
-  function openMaps(e) {
-    e.preventDefault();
-    var url = e.currentTarget.href;
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location = 'geo:40.2704275,22.5095192';
-      setTimeout(function(){ window.open(url,'_blank'); }, 500);
-    } else { window.open(url,'_blank'); }
-  }
 </script>
 </body>
 </html>
