@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="el">
 <head>
   <meta charset="UTF-8" />
@@ -23,195 +24,195 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:             #0B240F;
-  --bg-deep:        #071608;
-  --bone:           rgba(255,255,255,0.22);
-  --text-primary:   #ffffff;
-  --text-secondary: rgba(255,255,255,0.85);
-  --text-muted:     rgba(255,255,255,0.55);
-  --accent:         #a8e6c3;
-  --accent-light:   #d4f5e4;
-  --btn-bg:         #ffffff;
-  --btn-text:       #0B240F;
-  --sidebar-w:      240px;
+–bg:             #0B240F;
+–bg-deep:        #071608;
+–bone:           rgba(255,255,255,0.22);
+–text-primary:   #ffffff;
+–text-secondary: rgba(255,255,255,0.85);
+–text-muted:     rgba(255,255,255,0.55);
+–accent:         #a8e6c3;
+–accent-light:   #d4f5e4;
+–btn-bg:         #ffffff;
+–btn-text:       #0B240F;
+–sidebar-w:      240px;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--bg);
-  color: var(--text-primary);
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  min-height: 100vh;
-  overflow-x: hidden;
+background-color: var(–bg);
+color: var(–text-primary);
+font-family: ‘Lato’, sans-serif;
+font-weight: 300;
+min-height: 100vh;
+overflow-x: hidden;
 }
 
 body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(0,0,0,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 70% at 85% 85%, rgba(0,0,0,0.12) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image:
+radial-gradient(ellipse 80% 60% at 15% 10%, rgba(0,0,0,0.15) 0%, transparent 60%),
+radial-gradient(ellipse 60% 70% at 85% 85%, rgba(0,0,0,0.12) 0%, transparent 60%);
+pointer-events: none;
+z-index: 0;
 }
 
 /* SIDEBAR */
 .sidebar {
-  position: fixed;
-  top: 0; left: 0; bottom: 0;
-  width: var(--sidebar-w);
-  z-index: 100;
-  background: rgba(7,22,8,0.97);
-  border-right: 1px solid rgba(168,230,195,0.13);
-  display: flex;
-  flex-direction: column;
-  padding: 36px 0 32px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
+position: fixed;
+top: 0; left: 0; bottom: 0;
+width: var(–sidebar-w);
+z-index: 100;
+background: rgba(7,22,8,0.97);
+border-right: 1px solid rgba(168,230,195,0.13);
+display: flex;
+flex-direction: column;
+padding: 36px 0 32px;
+overflow-y: auto;
+overflow-x: hidden;
+overscroll-behavior: contain;
 }
 
 @media (max-width: 768px) {
-  .sidebar { padding-top: 80px; }
+.sidebar { padding-top: 80px; }
 }
 
 .sidebar-brand {
-  padding: 0 24px 28px;
-  border-bottom: 1px solid rgba(168,230,195,0.1);
-  margin-bottom: 20px;
-  text-decoration: none;
-  display: block;
+padding: 0 24px 28px;
+border-bottom: 1px solid rgba(168,230,195,0.1);
+margin-bottom: 20px;
+text-decoration: none;
+display: block;
 }
 
 .sidebar-brand .sb-name {
-  font-size: 0.88rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--text-primary);
-  line-height: 1.4;
-  display: block;
+font-size: 0.88rem;
+font-weight: 700;
+letter-spacing: 0.1em;
+color: var(–text-primary);
+line-height: 1.4;
+display: block;
 }
 
 .sidebar-brand .sb-title {
-  font-size: 0.65rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-top: 4px;
-  display: block;
+font-size: 0.65rem;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–accent);
+margin-top: 4px;
+display: block;
 }
 
 .sidebar-nav {
-  list-style: none;
-  flex: 1;
-  padding: 0 12px;
+list-style: none;
+flex: 1;
+padding: 0 12px;
 }
 
 .sidebar-nav li { margin-bottom: 2px; }
 
 .sidebar-nav > li > a,
 .sidebar-nav > li > button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 6px;
-  font-family: 'Lato', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  text-decoration: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  transition: color 0.2s, background 0.2s;
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+padding: 10px 12px;
+border-radius: 6px;
+font-family: ‘Lato’, sans-serif;
+font-size: 0.72rem;
+font-weight: 700;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(–text-secondary);
+text-decoration: none;
+background: none;
+border: none;
+cursor: pointer;
+text-align: left;
+transition: color 0.2s, background 0.2s;
 }
 
 .sidebar-nav > li > a:hover,
 .sidebar-nav > li > button:hover,
 .sidebar-nav > li > a.active,
 .sidebar-nav > li > button.active {
-  color: var(--accent);
-  background: rgba(168,230,195,0.08);
+color: var(–accent);
+background: rgba(168,230,195,0.08);
 }
 
 .sidebar-nav > li > button svg {
-  width: 12px; height: 12px;
-  stroke: currentColor; fill: none;
-  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
-  transition: transform 0.25s;
-  flex-shrink: 0;
+width: 12px; height: 12px;
+stroke: currentColor; fill: none;
+stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+transition: transform 0.25s;
+flex-shrink: 0;
 }
 
 .sidebar-nav > li > button.open svg { transform: rotate(180deg); }
 
 .submenu {
-  list-style: none;
-  padding: 4px 0 6px 12px;
-  display: none;
+list-style: none;
+padding: 4px 0 6px 12px;
+display: none;
 }
 
 .submenu.open { display: block; }
 
 .submenu li a {
-  display: block;
-  padding: 7px 12px;
-  border-radius: 5px;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: color 0.2s, background 0.2s;
-  border-left: 1px solid rgba(168,230,195,0.12);
-  margin-left: 4px;
+display: block;
+padding: 7px 12px;
+border-radius: 5px;
+font-size: 0.68rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–text-muted);
+text-decoration: none;
+transition: color 0.2s, background 0.2s;
+border-left: 1px solid rgba(168,230,195,0.12);
+margin-left: 4px;
 }
 
 .submenu li a:hover,
 .submenu li a.active {
-  color: var(--accent);
-  background: rgba(168,230,195,0.06);
-  border-left-color: var(--accent);
+color: var(–accent);
+background: rgba(168,230,195,0.06);
+border-left-color: var(–accent);
 }
 
 .sidebar-footer {
-  padding: 20px 24px 0;
-  border-top: 1px solid rgba(168,230,195,0.1);
-  font-size: 0.62rem;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
+padding: 20px 24px 0;
+border-top: 1px solid rgba(168,230,195,0.1);
+font-size: 0.62rem;
+color: var(–text-muted);
+letter-spacing: 0.08em;
 }
 
 /* HAMBURGER */
 .hamburger {
-  display: none;
-  position: fixed;
-  top: 14px; left: 14px;
-  z-index: 200;
-  width: 48px; height: 48px;
-  border-radius: 10px;
-  background: rgba(7,22,8,0.92);
-  border: 1px solid rgba(168,230,195,0.2);
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 6px;
-  cursor: pointer;
-  backdrop-filter: blur(8px);
+display: none;
+position: fixed;
+top: 14px; left: 14px;
+z-index: 200;
+width: 48px; height: 48px;
+border-radius: 10px;
+background: rgba(7,22,8,0.92);
+border: 1px solid rgba(168,230,195,0.2);
+align-items: center;
+justify-content: center;
+flex-direction: column;
+gap: 6px;
+cursor: pointer;
+backdrop-filter: blur(8px);
 }
 
 .hamburger .icon-menu,
 .hamburger .icon-close {
-  width: 22px; height: 22px;
-  display: block;
-  color: var(--text-primary);
+width: 22px; height: 22px;
+display: block;
+color: var(–text-primary);
 }
 
 .hamburger .icon-close { display: none; }
@@ -219,175 +220,174 @@ body::before {
 .hamburger.open .icon-close { display: block; }
 
 .sidebar-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  z-index: 99;
-  backdrop-filter: blur(2px);
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.5);
+z-index: 99;
+backdrop-filter: blur(2px);
 }
 
 .sidebar-overlay.open { display: block; }
 
 /* MAIN CONTENT */
 .main-content {
-  margin-left: var(--sidebar-w);
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
+margin-left: var(–sidebar-w);
+position: relative;
+z-index: 1;
+min-height: 100vh;
 }
 
 /* PAGE WRAP */
 .page-wrap {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 64px 40px 80px;
+max-width: 700px;
+margin: 0 auto;
+padding: 64px 40px 80px;
 }
 
 .page-title {
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  opacity: 0;
-  transform: translateY(14px);
-  animation: fadeUp 0.9s ease forwards;
+font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+font-weight: 300;
+letter-spacing: 0.06em;
+color: var(–text-primary);
+margin-bottom: 8px;
+opacity: 0;
+transform: translateY(14px);
+animation: fadeUp 0.9s ease forwards;
 }
 
 .page-subtitle {
-  font-size: 0.7rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeIn 0.9s 0.2s ease forwards;
+font-size: 0.7rem;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–accent);
+font-weight: 700;
+margin-bottom: 28px;
+opacity: 0;
+animation: fadeIn 0.9s 0.2s ease forwards;
 }
 
 .divider {
-  width: 100%;
-  height: 1px;
-  background: rgba(255,255,255,0.12);
-  margin: 0 0 48px;
-  opacity: 0;
-  animation: fadeIn 1s 0.3s ease forwards;
+width: 100%;
+height: 1px;
+background: rgba(255,255,255,0.12);
+margin: 0 0 48px;
+opacity: 0;
+animation: fadeIn 1s 0.3s ease forwards;
 }
 
 /* CONTACT CARDS */
 .contact-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeUp 0.8s 0.4s ease forwards;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+opacity: 0;
+transform: translateY(10px);
+animation: fadeUp 0.8s 0.4s ease forwards;
 }
 
 @media (max-width: 560px) {
-  .contact-cards { grid-template-columns: 1fr; }
+.contact-cards { grid-template-columns: 1fr; }
 }
 
 .contact-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(168,230,195,0.14);
-  border-radius: 14px;
-  padding: 28px 24px;
-  transition: background 0.25s, border-color 0.25s, transform 0.25s;
-  text-decoration: none;
-  color: inherit;
-  display: block;
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(168,230,195,0.14);
+border-radius: 14px;
+padding: 28px 24px;
+transition: background 0.25s, border-color 0.25s, transform 0.25s;
+text-decoration: none;
+color: inherit;
+display: block;
 }
 
 .contact-card:hover {
-  background: rgba(168,230,195,0.07);
-  border-color: rgba(168,230,195,0.4);
-  transform: translateY(-3px);
+background: rgba(168,230,195,0.07);
+border-color: rgba(168,230,195,0.4);
+transform: translateY(-3px);
 }
 
 .contact-card-icon {
-  width: 44px; height: 44px;
-  border-radius: 10px;
-  background: rgba(168,230,195,0.1);
-  border: 1px solid rgba(168,230,195,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
+width: 44px; height: 44px;
+border-radius: 10px;
+background: rgba(168,230,195,0.1);
+border: 1px solid rgba(168,230,195,0.2);
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 16px;
 }
 
 .contact-card-icon svg {
-  width: 20px; height: 20px;
-  stroke: var(--accent);
-  fill: none;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+width: 20px; height: 20px;
+stroke: var(–accent);
+fill: none;
+stroke-width: 1.7;
+stroke-linecap: round;
+stroke-linejoin: round;
 }
 
 .contact-card-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 8px;
+font-size: 0.62rem;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–accent);
+font-weight: 700;
+margin-bottom: 8px;
 }
 
 .contact-card-value {
-  font-size: 1rem;
-  color: var(--text-primary);
-  line-height: 1.6;
-  font-weight: 300;
+font-size: 1rem;
+color: var(–text-primary);
+line-height: 1.6;
+font-weight: 300;
 }
 
 .contact-card-sub {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  margin-top: 4px;
-  line-height: 1.5;
+font-size: 0.78rem;
+color: var(–text-muted);
+margin-top: 4px;
+line-height: 1.5;
 }
 
 /* MAP */
 .map-section {
-  margin-top: 36px;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeUp 0.8s 0.65s ease forwards;
+margin-top: 36px;
+opacity: 0;
+transform: translateY(10px);
+animation: fadeUp 0.8s 0.65s ease forwards;
 }
 
 .map-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 14px;
+font-size: 0.62rem;
+letter-spacing: 0.22em;
+text-transform: uppercase;
+color: var(–accent);
+font-weight: 700;
+margin-bottom: 14px;
 }
 
 .map-frame {
-  width: 100%;
-  height: 280px;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(168,230,195,0.14);
-  display: block;
+width: 100%;
+height: 280px;
+border-radius: 14px;
+overflow: hidden;
+border: 1px solid rgba(168,230,195,0.14);
+display: block;
 }
 
 .map-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-  filter: saturate(0.3) brightness(0.7) hue-rotate(80deg);
+width: 100%;
+height: 100%;
+border: 0;
 }
 
 /* Cookie */
 #cookie-banner { position:fixed; bottom:0; left:0; right:0; z-index:1000; background:rgba(7,22,8,0.97); border-top:1px solid rgba(168,230,195,0.2); padding:16px 24px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; backdrop-filter:blur(8px); }
 #cookie-banner p { font-size:0.82rem; color:rgba(255,255,255,0.7); margin:0; text-align:center; line-height:1.6; }
-.cookie-btn { font-family:'Lato',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; border:none; border-radius:50px; padding:8px 20px; cursor:pointer; transition:opacity 0.2s,transform 0.2s; white-space:nowrap; }
+.cookie-btn { font-family:‘Lato’,sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; border:none; border-radius:50px; padding:8px 20px; cursor:pointer; transition:opacity 0.2s,transform 0.2s; white-space:nowrap; }
 .cookie-btn:hover { opacity:0.85; transform:translateY(-1px); }
-.cookie-btn.accept { background:var(--accent); color:var(--bg-deep); }
+.cookie-btn.accept { background:var(–accent); color:var(–bg-deep); }
 .cookie-btn.decline { background:transparent; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.2); }
 
 @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
@@ -395,18 +395,19 @@ body::before {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    width: 260px;
-    z-index: 150;
-  }
-  .sidebar.open { transform: translateX(0); }
-  .hamburger { display: flex; }
-  .main-content { margin-left: 0; }
-  .page-wrap { padding: 90px 20px 52px; }
+.sidebar {
+transform: translateX(-100%);
+transition: transform 0.3s ease;
+width: 260px;
+z-index: 150;
 }
-  </style>
+.sidebar.open { transform: translateX(0); }
+.hamburger { display: flex; }
+.main-content { margin-left: 0; }
+.page-wrap { padding: 90px 20px 52px; }
+}
+</style>
+
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
@@ -452,54 +453,57 @@ body::before {
 
   <div class="contact-cards">
 
-    <!-- Phone -->
-    <a class="contact-card" href="tel:2351105725">
-      <div class="contact-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      </div>
-      <div class="contact-card-label">Σταθερό τηλέφωνο</div>
-      <div class="contact-card-value">2351105725</div>
-      <div class="contact-card-sub">Πατήστε για κλήση</div>
-    </a>
+```
+<!-- Phone -->
+<a class="contact-card" href="tel:2351105725">
+  <div class="contact-card-icon">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </div>
+  <div class="contact-card-label">Σταθερό τηλέφωνο</div>
+  <div class="contact-card-value">2351105725</div>
+  <div class="contact-card-sub">Πατήστε για κλήση</div>
+</a>
 
-    <!-- Mobile -->
-    <a class="contact-card" href="tel:6984135227">
-      <div class="contact-card-icon">
-        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-      </div>
-      <div class="contact-card-label">Κινητό τηλέφωνο</div>
-      <div class="contact-card-value">6984135227</div>
-      <div class="contact-card-sub">Πατήστε για κλήση</div>
-    </a>
+<!-- Mobile -->
+<a class="contact-card" href="tel:6984135227">
+  <div class="contact-card-icon">
+    <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+  </div>
+  <div class="contact-card-label">Κινητό τηλέφωνο</div>
+  <div class="contact-card-value">6984135227</div>
+  <div class="contact-card-sub">Πατήστε για κλήση</div>
+</a>
 
-    <!-- Email -->
-    <a class="contact-card" href="mailto:polychronidis.neurology&#64;gmail.com">
-      <div class="contact-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
-      <div class="contact-card-label">Email</div>
-      <div class="contact-card-value" style="font-size:0.88rem;">polychronidis.neurology&#64;gmail.com</div>
-      <div class="contact-card-sub">Πατήστε για αποστολή</div>
-    </a>
+<!-- Email -->
+<a class="contact-card" href="/cdn-cgi/l/email-protection#1c6c7370657f746e73727578756f327279696e7370737b653a3f2a28277b717d7570327f7371">
+  <div class="contact-card-icon">
+    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+  </div>
+  <div class="contact-card-label">Email</div>
+  <div class="contact-card-value" style="font-size:0.88rem;">polychronidis.neurology&#64;gmail.com</div>
+  <div class="contact-card-sub">Πατήστε για αποστολή</div>
+</a>
 
-    <!-- Address -->
-    <a class="contact-card" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener">
-      <div class="contact-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div class="contact-card-label">Διεύθυνση Ιατρείου</div>
-      <div class="contact-card-value">25ης Μαρτίου 12<br>60132 Κατερίνη</div>
-      <div class="contact-card-sub">Άνοιγμα χάρτη</div>
-    </a>
+<!-- Address -->
+<a class="contact-card" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener">
+  <div class="contact-card-icon">
+    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+  </div>
+  <div class="contact-card-label">Διεύθυνση Ιατρείου</div>
+  <div class="contact-card-value">25ης Μαρτίου 12<br>60132 Κατερίνη</div>
+  <div class="contact-card-sub">Άνοιγμα χάρτη</div>
+</a>
+```
 
   </div>
 
   <!-- Map -->
+
   <div class="map-section">
     <div class="map-label">Χάρτης</div>
     <div class="map-frame">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.!2d22.5095192!3d40.2704275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a83e2e2e2e2e2f%3A0x0!2s25%CE%B7%CF%82+%CE%9C%CE%B1%CF%81%CF%84%CE%AF%CE%BF%CF%85+12%2C+%CE%9A%CE%B1%CF%84%CE%B5%CF%81%CE%AF%CE%BD%CE%B7!5e0!3m2!1sel!2sgr!4v1700000000000!5m2!1sel!2sgr"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.0!2d22.5095192!3d40.2704275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135803b0bf36710d%3A0x537be7e37e26fc1a!2z25is+Martiou+12!5e0!3m2!1sel!2sgr!4v1700000000000!5m2!1sel!2sgr"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
@@ -515,7 +519,7 @@ body::before {
   <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
     var h = document.getElementById('hamburger');
@@ -577,10 +581,4 @@ body::before {
     e.preventDefault();
     var url = e.currentTarget.href;
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location = 'geo:40.2704275,22.5095192';
-      setTimeout(function(){ window.open(url,'_blank'); }, 500);
-    } else { window.open(url,'_blank'); }
-  }
-</script>
-</body>
-</html>
+      window.location 
