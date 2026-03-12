@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Επικοινωνία | Κωνσταντίνος Πολυχρονίδης — Νευρολόγος Κατερίνη</title>
+  <meta name="description" content="Επικοινωνήστε με τον νευρολόγο Κωνσταντίνο Πολυχρονίδη στην Κατερίνη. Τηλέφωνο, email και διεύθυνση ιατρείου." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://polychronidis-neurology.gr/pages/epikoinonia.html" />
+  <meta property="og:title" content="Επικοινωνία | Κωνσταντίνος Πολυχρονίδης — Νευρολόγος Κατερίνη" />
+  <meta property="og:description" content="Επικοινωνήστε με τον νευρολόγο Κωνσταντίνο Πολυχρονίδη στην Κατερίνη." />
+  <meta property="og:image" content="https://res.cloudinary.com/dapfmybvl/image/upload/w_1200,h_1200,c_fill,g_face,q_auto,f_auto/v1772981581/profile_hvauo3.png" />
+  <meta property="og:locale" content="el_GR" />
+  <link rel="canonical" href="https://polychronidis-neurology.gr/pages/epikoinonia.html" />
+  <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:             #0B240F;
+  --bg-deep:        #071608;
+  --bone:           rgba(255,255,255,0.22);
+  --text-primary:   #ffffff;
+  --text-secondary: rgba(255,255,255,0.85);
+  --text-muted:     rgba(255,255,255,0.55);
+  --accent:         #a8e6c3;
+  --accent-light:   #d4f5e4;
+  --btn-bg:         #ffffff;
+  --btn-text:       #0B240F;
+  --sidebar-w:      240px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(0,0,0,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 85% 85%, rgba(0,0,0,0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  width: var(--sidebar-w);
+  z-index: 100;
+  background: rgba(7,22,8,0.97);
+  border-right: 1px solid rgba(168,230,195,0.13);
+  display: flex;
+  flex-direction: column;
+  padding: 36px 0 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 768px) {
+  .sidebar { padding-top: 80px; }
+}
+
+.sidebar-brand {
+  padding: 0 24px 28px;
+  border-bottom: 1px solid rgba(168,230,195,0.1);
+  margin-bottom: 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar-brand .sb-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  line-height: 1.4;
+  display: block;
+}
+
+.sidebar-brand .sb-title {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: 4px;
+  display: block;
+}
+
+.sidebar-nav {
+  list-style: none;
+  flex: 1;
+  padding: 0 12px;
+}
+
+.sidebar-nav li { margin-bottom: 2px; }
+
+.sidebar-nav > li > a,
+.sidebar-nav > li > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.2s, background 0.2s;
+}
+
+.sidebar-nav > li > a:hover,
+.sidebar-nav > li > button:hover,
+.sidebar-nav > li > a.active,
+.sidebar-nav > li > button.active {
+  color: var(--accent);
+  background: rgba(168,230,195,0.08);
+}
+
+.sidebar-nav > li > button svg {
+  width: 12px; height: 12px;
+  stroke: currentColor; fill: none;
+  stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.25s;
+  flex-shrink: 0;
+}
+
+.sidebar-nav > li > button.open svg { transform: rotate(180deg); }
+
+.submenu {
+  list-style: none;
+  padding: 4px 0 6px 12px;
+  display: none;
+}
+
+.submenu.open { display: block; }
+
+.submenu li a {
+  display: block;
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  border-left: 1px solid rgba(168,230,195,0.12);
+  margin-left: 4px;
+}
+
+.submenu li a:hover,
+.submenu li a.active {
+  color: var(--accent);
+  background: rgba(168,230,195,0.06);
+  border-left-color: var(--accent);
+}
+
+.sidebar-footer {
+  padding: 20px 24px 0;
+  border-top: 1px solid rgba(168,230,195,0.1);
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 14px; left: 14px;
+  z-index: 200;
+  width: 48px; height: 48px;
+  border-radius: 10px;
+  background: rgba(7,22,8,0.92);
+  border: 1px solid rgba(168,230,195,0.2);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.hamburger .icon-menu,
+.hamburger .icon-close {
+  width: 22px; height: 22px;
+  display: block;
+  color: var(--text-primary);
+}
+
+.hamburger .icon-close { display: none; }
+.hamburger.open .icon-menu { display: none; }
+.hamburger.open .icon-close { display: block; }
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 99;
+  backdrop-filter: blur(2px);
+}
+
+.sidebar-overlay.open { display: block; }
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left: var(--sidebar-w);
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+/* PAGE WRAP */
+.page-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 64px 40px 80px;
+}
+
+.page-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeUp 0.9s ease forwards;
+}
+
+.page-subtitle {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeIn 0.9s 0.2s ease forwards;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 0 0 48px;
+  opacity: 0;
+  animation: fadeIn 1s 0.3s ease forwards;
+}
+
+/* CONTACT CARDS */
+.contact-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s 0.4s ease forwards;
+}
+
+@media (max-width: 560px) {
+  .contact-cards { grid-template-columns: 1fr; }
+}
+
+.contact-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(168,230,195,0.14);
+  border-radius: 14px;
+  padding: 18px 24px;
+  transition: background 0.25s, border-color 0.25s, transform 0.25s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.contact-card:hover {
+  background: rgba(168,230,195,0.07);
+  border-color: rgba(168,230,195,0.4);
+  transform: translateY(-3px);
+}
+
+.contact-card-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: rgba(168,230,195,0.1);
+  border: 1px solid rgba(168,230,195,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.contact-card-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--accent);
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.contact-card-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 300;
+  word-break: break-all;
+}
+
+.contact-card-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* MAP */
+.map-section {
+  margin-top: 36px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 0.8s 0.65s ease forwards;
+}
+
+.map-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.map-frame {
+  width: 100%;
+  height: 280px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(168,230,195,0.14);
+  display: block;
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: saturate(0.5) brightness(0.9) hue-rotate(80deg);
+}
+
+/* Cookie */
+#cookie-banner { position:fixed; bottom:0; left:0; right:0; z-index:1000; background:rgba(7,22,8,0.97); border-top:1px solid rgba(168,230,195,0.2); padding:16px 24px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; backdrop-filter:blur(8px); }
+#cookie-banner p { font-size:0.82rem; color:rgba(255,255,255,0.7); margin:0; text-align:center; line-height:1.6; }
+.cookie-btn { font-family:'Lato',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; border:none; border-radius:50px; padding:8px 20px; cursor:pointer; transition:opacity 0.2s,transform 0.2s; white-space:nowrap; }
+.cookie-btn:hover { opacity:0.85; transform:translateY(-1px); }
+.cookie-btn.accept { background:var(--accent); color:var(--bg-deep); }
+.cookie-btn.decline { background:transparent; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.2); }
+
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+@keyframes fadeIn { to { opacity:1; } }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 260px;
+    z-index: 150;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .hamburger { display: flex; }
+  .main-content { margin-left: 0; }
+  .page-wrap { padding: 90px 20px 52px; }
+}
+  </style>
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <a class="sidebar-brand" href="../index.html">
+    <span class="sb-name">Κωνσταντίνος Πολυχρονίδης</span>
+    <span class="sb-title">Νευρολόγος</span>
+  </a>
+  <ul class="sidebar-nav">
+    <li><a href="../index.html">Αρχική Σελίδα</a></li>
+    <li>
+      <button onclick="toggleSubmenu(this)" class="open">
+        Νευρολογικές παθήσεις
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="submenu open">
+        <li><a href="pathiseis.html">Γενικά</a></li>
+        <li><a href="kefalalagia.html">Κεφαλαλγία</a></li>
+        <li><a href="iligos.html">Ίλιγγος</a></li>
+        <li><a href="parkinson.html">Νόσος Parkinson</a></li>
+        <li><a href="anoia.html">Άνοια</a></li>
+        <li><a href="epilipsia.html">Επιληψία</a></li>
+        <li><a href="sklirynsi.html">Πολλαπλή Σκλήρυνση</a></li>
+        <li><a href="als.html">Νόσος του Κινητικού Νεύρωνα</a></li>
+        <li><a href="narkolipsia.html">Narκοληψία</a></li>
+      </ul>
+    </li>
+    <li><a href="biografiko.html">Βιογραφικό Σημείωμα</a></li>
+    <li><a href="fotografies.html">Το Ιατρείο</a></li>
+    <li><a href="epikoinonia.html" class="active">Επικοινωνία</a></li>
+  </ul>
+  <div class="sidebar-footer">&copy; 2025 Κωνσταντίνος Πολυχρονίδης</div>
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Μενού">
+  <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+</button>
+<div class="main-content">
+<div class="page-wrap">
+  <h1 class="page-title">Επικοινωνία</h1>
+  <p class="page-subtitle">Κωνσταντίνος Πολυχρονίδης — Νευρολόγος</p>
+  <div class="divider"></div>
+
+  <div class="contact-cards">
+
+    <!-- Phone -->
+    <a class="contact-card" href="tel:2351105725">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </div>
+      <div class="contact-card-text">
+        <div class="contact-card-label">Σταθερό τηλέφωνο</div>
+        <div class="contact-card-value">2351105725</div>
+        <div class="contact-card-sub">Πατήστε για κλήση</div>
+      </div>
+    </a>
+
+    <!-- Mobile -->
+    <a class="contact-card" href="tel:6984135227">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <div class="contact-card-text">
+        <div class="contact-card-label">Κινητό τηλέφωνο</div>
+        <div class="contact-card-value">6984135227</div>
+        <div class="contact-card-sub">Πατήστε για κλήση</div>
+      </div>
+    </a>
+
+    <!-- Email -->
+    <a class="contact-card" href="/cdn-cgi/l/email-protection#eb9b8487928883998485828f8298c5858e9e998487848c92cdc8dddfd08c868a8287c5888486">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div class="contact-card-text">
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">polychronidis.neurology&#64;gmail.com</div>
+        <div class="contact-card-sub">Πατήστε για αποστολή</div>
+      </div>
+    </a>
+
+    <!-- Address -->
+    <a class="contact-card" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div class="contact-card-text">
+        <div class="contact-card-label">Διεύθυνση Ιατρείου</div>
+        <div class="contact-card-value">25ης Μαρτίου 12, 60132 Κατερίνη</div>
+        <div class="contact-card-sub">Άνοιγμα χάρτη</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Map -->
+  <div class="map-section">
+    <div class="map-label">Χάρτης</div>
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.0!2d22.5095192!3d40.2704275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135803b0bf36710d%3A0x537be7e37e26fc1a!2z25is+Martiou+12!5e0!3m2!1sel!2sgr!4v1700000000000!5m2!1sel!2sgr"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Χάρτης ιατρείου">
+      </iframe>
+    </div>
+  </div>
+
+</div>
+</div>
+<div id="cookie-banner" style="display:none;">
+  <p>Η ιστοσελίδα χρησιμοποιεί Google Analytics για στατιστικά επισκεψιμότητας. Τα δεδομένα δεν μοιράζονται με τρίτους.</p>
+  <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
+  <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  function toggleSidebar() {
+    var s = document.getElementById('sidebar');
+    var h = document.getElementById('hamburger');
+    var o = document.getElementById('sidebarOverlay');
+    s.classList.toggle('open');
+    h.classList.toggle('open');
+    o.classList.toggle('open');
+  }
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('sidebarOverlay').classList.remove('open');
+  }
+  function toggleSubmenu(btn) {
+    btn.classList.toggle('open');
+    var sub = btn.nextElementSibling;
+    sub.classList.toggle('open');
+  }
+  (function() {
+    var sidebar = document.getElementById('sidebar');
+    var startY = 0;
+    sidebar.addEventListener('touchstart', function(e) {
+      startY = e.touches[0].clientY;
+    }, { passive: true });
+    sidebar.addEventListener('touchmove', function(e) {
+      var scrollable = sidebar.scrollHeight > sidebar.clientHeight;
+      if (!scrollable) { e.preventDefault(); return; }
+      var atTop = sidebar.scrollTop === 0;
+      var atBottom = sidebar.scrollTop + sidebar.clientHeight >= sidebar.scrollHeight;
+      var movingDown = e.touches[0].clientY < startY;
+      var movingUp = e.touches[0].clientY > startY;
+      if ((atTop && movingUp) || (atBottom && movingDown)) { e.preventDefault(); }
+    }, { passive: false });
+  })();
+  (function() {
+    if (!localStorage.getItem('cookie_consent')) {
+      document.getElementById('cookie-banner').style.display = 'flex';
+    }
+  })();
+  function cookieAccept() {
+    localStorage.setItem('cookie_consent','accepted');
+    document.getElementById('cookie-banner').style.display='none';
+    loadAnalytics();
+  }
+  function cookieDecline() {
+    localStorage.setItem('cookie_consent','declined');
+    document.getElementById('cookie-banner').style.display='none';
+  }
+  function loadAnalytics() {
+    var s=document.createElement('script'); s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=G-NZL6HK1Y9G';
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gta
