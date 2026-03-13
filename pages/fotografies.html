@@ -816,27 +816,27 @@ body::before {
 <div class="gallery-grid">
 
 <div class="gallery-item" onclick="openLightbox(this)">
-<img src="../assets/anamoni.png" alt="Χώρος αναμονής - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
+<img src="../assets/images/thumbs/anamoni.webp" data-full="../assets/images/original/anamoni.webp" alt="Χώρος αναμονής - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
 </div>
 
 <div class="gallery-item" onclick="openLightbox(this)">
-<img src="../assets/anamoni2.png" alt="Χώρος αναμονής - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
+<img src="../assets/images/thumbs/anamoni2.webp" data-full="../assets/images/original/anamoni2.webp" alt="Χώρος αναμονής - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
 </div>  
 
 <div class="gallery-item" onclick="openLightbox(this)">
-<img src="../assets/grafeio.png" alt="Γραφείο ιατρού - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
+<img src="../assets/images/thumbs/grafeio.webp" data-full="../assets/images/original/grafeio.webp" alt="Γραφείο ιατρού - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
 </div>
 
 <div class="gallery-item" onclick="openLightbox(this)">
-<img src="../assets/eksetastirio.png" alt="Εξεταστήριο - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
+<img src="../assets/images/thumbs/eksetastirio.webp" data-full="../assets/images/original/eksetastirio.webp" alt="Εξεταστήριο - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
 </div>
 
 <div class="gallery-item" onclick="openLightbox(this)">
-<img src="../assets/ergaleia.png" alt="Νευρολογικά εργαλεία - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
+<img src="../assets/images/thumbs/ergaleia.webp" data-full="../assets/images/original/ergaleia.webp" alt="Νευρολογικά εργαλεία - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
 </div>
 
 <div class="gallery-item" onclick="openLightbox(this)">
-<img src="../assets/ktirio.png" alt="Εξωτερικό κτιρίου ιατρείου - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
+<img src="../assets/images/thumbs/ktirio.webp" data-full="../assets/images/original/ktirio.webp" alt="Εξωτερικό κτιρίου ιατρείου - Κωνσταντίνος Πολυχρονίδης - Νευρολόγος Κατερίνη" loading="lazy">
 </div>
 
 </div>
@@ -863,7 +863,7 @@ body::before {
   function openLightbox(slot) {
     var img = slot.querySelector('img');
     if (!img) return;
-    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').src = img.dataset.full || img.src;
     document.getElementById('lightbox-img').alt = img.alt;
     document.getElementById('lightbox').classList.add('open');
   }
