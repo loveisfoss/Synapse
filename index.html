@@ -600,7 +600,7 @@ body::before {
 <div class="main-content">
 <main class="card">
   <div class="photo-wrap">
-    <img src="/assets/profile.png" alt="Κωνσταντίνος Πολυχρονίδης" />
+    <img src="/assets/images/original/profile.webp" alt="Κωνσταντίνος Πολυχρονίδης" />
   </div>
   <h1 class="name">Κωνσταντίνος Πολυχρονίδης</h1>
   <p class="specialty">Νευρολόγος</p>
@@ -639,7 +639,7 @@ body::before {
     <div class="info-block">
       <div class="info-label">Διεύθυνση email</div>
       <p class="info-text">
-        <a href="mailto:polychronidis.neurology&#64;gmail.com" class="contact-text-link">polychronidis.neurology&#64;gmail.com</a>
+        <a href="/cdn-cgi/l/email-protection#a9d9c6c5d0cac1dbc6c7c0cdc0da87c7ccdcdbc6c5c6ced08f8a9f9d92cec4c8c0c587cac6c4" class="contact-text-link">polychronidis.neurology&#64;gmail.com</a>
       </p>
     </div>
   </div>
@@ -650,7 +650,7 @@ body::before {
     <a class="contact-link" href="tel:6984135227" title="Κινητό">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
     </a>
-    <a class="contact-link" href="mailto:polychronidis.neurology&#64;gmail.com" title="Email">
+    <a class="contact-link" href="/cdn-cgi/l/email-protection#ddadb2b1a4beb5afb2b3b4b9b4aef3b3b8a8afb2b1b2baa4fbfeebe9e6bab0bcb4b1f3beb2b0" title="Email">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
     <a class="contact-link" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener" title="Χάρτης">
@@ -664,7 +664,7 @@ body::before {
   <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
     var h = document.getElementById('hamburger');
@@ -732,11 +732,4 @@ body::before {
   function openMaps(e) {
     e.preventDefault();
     var url = e.currentTarget.href;
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location = 'geo:40.2704275,22.5095192';
-      setTimeout(function(){ window.open(url,'_blank'); }, 500);
-    } else { window.open(url,'_blank'); }
-  }
-</script>
-</body>
-</html>
+    if (/Android|iPhone|iPa
