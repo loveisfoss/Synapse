@@ -577,4 +577,11 @@ body::before {
     e.preventDefault();
     var url = e.currentTarget.href;
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location
+      window.location/i.test(navigator.userAgent)) {
+      window.location = 'geo:40.2704275,22.5095192';
+      setTimeout(function(){ window.open(url,'_blank'); }, 500);
+    } else { window.open(url,'_blank'); }
+  }
+</script>
+</body>
+</html>
