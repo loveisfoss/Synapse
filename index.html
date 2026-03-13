@@ -639,7 +639,7 @@ body::before {
     <div class="info-block">
       <div class="info-label">Διεύθυνση email</div>
       <p class="info-text">
-        <a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology@gmail.com</a>
+        <a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology&#64;gmail.com</a>
       </p>
     </div>
   </div>
@@ -665,6 +665,7 @@ body::before {
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
@@ -733,4 +734,11 @@ body::before {
   function openMaps(e) {
     e.preventDefault();
     var url = e.currentTarget.href
-    if (/Android/i
+    if (/Android/i.test(navigator.userAgent)) {
+      window.location = 'geo:40.2704275,22.5095192';
+      setTimeout(function(){ window.open(url,'_blank'); }, 500);
+    } else { window.open(url,'_blank'); }
+  }
+</script>
+</body>
+</html>
