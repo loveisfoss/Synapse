@@ -534,6 +534,7 @@ body::before {
     var sub = btn.nextElementSibling;
     sub.classList.toggle('open');
   }
+  // Prevent sidebar touch scroll from propagating to body
   (function() {
     var sidebar = document.getElementById('sidebar');
     var startY = 0;
@@ -542,14 +543,20 @@ body::before {
     }, { passive: true });
     sidebar.addEventListener('touchmove', function(e) {
       var scrollable = sidebar.scrollHeight > sidebar.clientHeight;
-      if (!scrollable) { e.preventDefault(); return; }
+      if (!scrollable) {
+        e.preventDefault();
+        return;
+      }
       var atTop = sidebar.scrollTop === 0;
       var atBottom = sidebar.scrollTop + sidebar.clientHeight >= sidebar.scrollHeight;
       var movingDown = e.touches[0].clientY < startY;
       var movingUp = e.touches[0].clientY > startY;
-      if ((atTop && movingUp) || (atBottom && movingDown)) { e.preventDefault(); }
+      if ((atTop && movingUp) || (atBottom && movingDown)) {
+        e.preventDefault();
+      }
     }, { passive: false });
   })();
+  // Cookie
   (function() {
     if (!localStorage.getItem('cookie_consent')) {
       document.getElementById('cookie-banner').style.display = 'flex';
@@ -575,9 +582,8 @@ body::before {
   if(localStorage.getItem('cookie_consent')==='accepted'){loadAnalytics();}
   function openMaps(e) {
     e.preventDefault();
-    var url = e.currentTarget.href;
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location/i.test(navigator.userAgent)) {
+    var url = e.currentTarget.href
+    if (/Android/i.test(navigator.userAgent)) {
       window.location = 'geo:40.2704275,22.5095192';
       setTimeout(function(){ window.open(url,'_blank'); }, 500);
     } else { window.open(url,'_blank'); }
