@@ -734,7 +734,6 @@ body::before {
   function openMaps(e) {
     e.preventDefault();
     var url = e.currentTarget.href
-    if (/Android/i
     if (/Android/i.test(navigator.userAgent)) {
       window.location = 'geo:40.2704275,22.5095192';
       setTimeout(function(){ window.open(url,'_blank'); }, 500);
