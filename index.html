@@ -639,7 +639,7 @@ body::before {
     <div class="info-block">
       <div class="info-label">Διεύθυνση email</div>
       <p class="info-text">
-        <a href="/cdn-cgi/l/email-protection#34445b584d575c465b5a5d505d471a5a5141465b585b534d745359555d581a575b59" class="contact-text-link">polychronidis.neurology&#64;gmail.com</a>
+        <a href="mailto:polychronidis.neurology@gmail.com" class="contact-text-link">polychronidis.neurology&#64;gmail.com</a>
       </p>
     </div>
   </div>
@@ -650,7 +650,7 @@ body::before {
     <a class="contact-link" href="tel:6984135227" title="Κινητό">
       <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
     </a>
-    <a class="contact-link" href="/cdn-cgi/l/email-protection#9aeaf5f6e3f9f2e8f5f4f3fef3e9b4f4ffefe8f5f6f5fde3dafdf7fbf3f6b4f9f5f7" title="Email">
+    <a class="contact-link" href="mailto:polychronidis.neurology@gmail.com" title="Email">
       <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
     <a class="contact-link" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener" title="Χάρτης">
@@ -664,7 +664,8 @@ body::before {
   <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
@@ -734,3 +735,11 @@ body::before {
     e.preventDefault();
     var url = e.currentTarget.href
     if (/Android/i
+    if (/Android/i.test(navigator.userAgent)) {
+      window.location = 'geo:40.2704275,22.5095192';
+      setTimeout(function(){ window.open(url,'_blank'); }, 500);
+    } else { window.open(url,'_blank'); }
+  }
+</script>
+</body>
+</html>
