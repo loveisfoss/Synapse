@@ -473,12 +473,12 @@ body::before {
     </a>
 
     <!-- Email -->
-    <a class="contact-card" href="mailto:polychronidis.neurology&#64;gmail.com">
+    <a class="contact-card" href="/cdn-cgi/l/email-protection#bcccd3d0c5dfd4ced3d2d5d8d5cf92d2d9c9ced3d0d3dbc59a9f8a8887dbd1ddd5d092dfd3d1">
       <div class="contact-card-icon">
         <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
       <div class="contact-card-label">Email</div>
-      <div class="contact-card-value" style="font-size:0.88rem;">polychronidis.neurology&#64;gmail.com</div>
+      <div class="contact-card-value">polychronidis.neurology&#64;gmail.com</div>
       <div class="contact-card-sub">Πατήστε για αποστολή</div>
     </a>
 
@@ -514,7 +514,7 @@ body::before {
   <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
   <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
     var h = document.getElementById('hamburger');
@@ -576,10 +576,4 @@ body::before {
     e.preventDefault();
     var url = e.currentTarget.href;
     if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location = 'geo:40.2704275,22.5095192';
-      setTimeout(function(){ window.open(url,'_blank'); }, 500);
-    } else { window.open(url,'_blank'); }
-  }
-</script>
-</body>
-</html>
+      window.location
