@@ -10,7 +10,13 @@
   <link rel="shortcut icon" href="/assets/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/assets/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+  @font-face { font-family: 'Lato'; font-style: normal; font-weight: 300; font-display: swap; src: url('/assets/fonts/lato-300.woff2') format('woff2'); }
+  @font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; font-display: swap; src: url('/assets/fonts/lato-400.woff2') format('woff2'); }
+  @font-face { font-family: 'Lato'; font-style: normal; font-weight: 700; font-display: swap; src: url('/assets/fonts/lato-700.woff2') format('woff2'); }
+  @font-face { font-family: 'Lato'; font-style: italic; font-weight: 300; font-display: swap; src: url('/assets/fonts/lato-300i.woff2') format('woff2'); }
+  @font-face { font-family: 'Lato'; font-style: italic; font-weight: 400; font-display: swap; src: url('/assets/fonts/lato-400i.woff2') format('woff2'); }
+  </style>
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -374,14 +380,14 @@ body::before {
   <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
 </button>
-<div class="main-content">
+<main class="main-content">
   <div class="not-found">
     <div class="not-found-code">404</div>
     <h1 class="not-found-title">Η σελίδα δεν βρέθηκε</h1>
     <p class="not-found-text">Η σελίδα που ζητήσατε δεν υπάρχει ή έχει μετακινηθεί.</p>
     <a class="not-found-btn" href="/index.html">Επιστροφή στην Αρχική</a>
   </div>
-</div>
+</main>
 <div id="cookie-banner" style="display:none;">
   <p>Η ιστοσελίδα χρησιμοποιεί Google Analytics για στατιστικά επισκεψιμότητας. Τα δεδομένα δεν μοιράζονται με τρίτους.</p>
   <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
