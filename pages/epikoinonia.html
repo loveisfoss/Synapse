@@ -342,6 +342,13 @@ body::before {
   transform: translateY(-3px);
 }
 
+.contact-card--static:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(168,230,195,0.14);
+  transform: none;
+  cursor: default;
+}    
+
 .contact-card-icon {
   width: 44px; height: 44px;
   border-radius: 10px;
@@ -556,7 +563,7 @@ body::before {
       <div class="contact-card-sub">Άνοιγμα χάρτη</div>
     </a>
     <!-- Hours -->
-    <div class="contact-card">
+    <div class="contact-card contact-card--static">
       <div class="contact-card-icon">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
       </div>
