@@ -665,7 +665,7 @@ body::before {
     </div>
     <div class="info-block">
       <div class="info-label">Διεύθυνση Ιατρείου</div>
-      <a href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" class="contact-text-link" target="_blank" rel="noopener">25ης Μαρτίου 12<br>60132 Κατερίνη</a>
+      <a href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" class="contact-text-link" target="_blank" rel="noopener" onclick="openMaps(event)">25ης Μαρτίου 12<br>60132 Κατερίνη</a>
     </div>
     <div class="info-block">
       <div class="info-label">Ωράριο Λειτουργίας</div>
@@ -751,6 +751,14 @@ body::before {
       }
     }, { passive: false });
   })();
+  function openMaps(e) {
+    e.preventDefault();
+    var url = e.currentTarget.href
+    if (/Android/i.test(navigator.userAgent)) {
+      window.location = 'geo:40.2704275,22.5095192';
+      setTimeout(function(){ window.open(url,'_blank'); }, 500);
+    } else { window.open(url,'_blank'); }
+  }
 </script>
 </body>
 </html>
