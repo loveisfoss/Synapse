@@ -546,7 +546,7 @@ body::before {
     </a>
 
     <!-- Address -->
-    <a class="contact-card" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener">
+    <a class="contact-card" href="https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7" target="_blank" rel="noopener" onclick="openMaps(event)">
       <div class="contact-card-icon">
         <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
@@ -625,6 +625,14 @@ body::before {
       }
     }, { passive: false });
   })();
+  function openMaps(e) {
+    e.preventDefault();
+    var url = e.currentTarget.href
+    if (/Android/i.test(navigator.userAgent)) {
+      window.location = 'geo:40.2704275,22.5095192';
+      setTimeout(function(){ window.open(url,'_blank'); }, 500);
+    } else { window.open(url,'_blank'); }
+  }
 </script>
 </body>
 </html>
