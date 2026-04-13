@@ -514,14 +514,6 @@ body::before {
 @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 @keyframes fadeIn { to { opacity:1; } }
 
-/* Cookie */
-#cookie-banner { position:fixed; bottom:0; left:0; right:0; z-index:1000; background:rgba(7,22,8,0.97); border-top:1px solid rgba(168,230,195,0.2); padding:16px 24px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; backdrop-filter:blur(8px); }
-#cookie-banner p { font-size:0.82rem; color:rgba(255,255,255,0.7); margin:0; text-align:center; line-height:1.6; }
-.cookie-btn { font-family:'Lato',sans-serif; font-size:0.78rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; border:none; border-radius:50px; padding:8px 20px; cursor:pointer; transition:opacity 0.2s,transform 0.2s; white-space:nowrap; }
-.cookie-btn:hover { opacity:0.85; transform:translateY(-1px); }
-.cookie-btn.accept { background:var(--accent); color:var(--bg-deep); }
-.cookie-btn.decline { background:transparent; color:rgba(255,255,255,0.5); border:1px solid rgba(255,255,255,0.2); }
-
 /* ═══════════════════════════════════
    HOME TWO-COLUMN GRID
 ═══════════════════════════════════ */
@@ -651,11 +643,6 @@ body::before {
     <p>Η διάγνωση βασίζεται σε κλινική εξέταση και ηλεκτρομυογράφημα (ΗΜΓ). Η πολυδύναμη προσέγγιση — με νευρολόγο, φυσιοθεραπευτή, λογοθεραπευτή και διατροφολόγο — μπορεί να βελτιώσει σημαντικά την ποιότητα ζωής.</p></div>
 </div>
 </main>
-<div id="cookie-banner" style="display:none;">
-  <p>Η ιστοσελίδα χρησιμοποιεί Google Analytics για στατιστικά επισκεψιμότητας. Τα δεδομένα δεν μοιράζονται με τρίτους.</p>
-  <button class="cookie-btn accept" onclick="cookieAccept()">Αποδοχή</button>
-  <button class="cookie-btn decline" onclick="cookieDecline()">Απόρριψη</button>
-</div>
 <script>
   function toggleSidebar() {
     var s = document.getElementById('sidebar');
@@ -697,38 +684,6 @@ body::before {
       }
     }, { passive: false });
   })();
-  // Cookie
-  (function() {
-    if (!localStorage.getItem('cookie_consent')) {
-      document.getElementById('cookie-banner').style.display = 'flex';
-    }
-  })();
-  function cookieAccept() {
-    localStorage.setItem('cookie_consent','accepted');
-    document.getElementById('cookie-banner').style.display='none';
-    loadAnalytics();
-  }
-  function cookieDecline() {
-    localStorage.setItem('cookie_consent','declined');
-    document.getElementById('cookie-banner').style.display='none';
-  }
-  function loadAnalytics() {
-    var s=document.createElement('script'); s.async=true;
-    s.src='https://www.googletagmanager.com/gtag/js?id=G-NZL6HK1Y9G';
-    document.head.appendChild(s);
-    window.dataLayer=window.dataLayer||[];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag=gtag; gtag('js',new Date()); gtag('config','G-NZL6HK1Y9G');
-  }
-  if(localStorage.getItem('cookie_consent')==='accepted'){loadAnalytics();}
-  function openMaps(e) {
-    e.preventDefault();
-    var url = e.currentTarget.href;
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      window.location = 'geo:40.2704275,22.5095192';
-      setTimeout(function(){ window.open(url,'_blank'); }, 500);
-    } else { window.open(url,'_blank'); }
-  }
 </script>
 </body>
 </html>
