@@ -227,7 +227,18 @@ body::before {
   font-size: 0.62rem;
   color: var(--text-muted);
   letter-spacing: 0.08em;
+  text-align: center;
 }
+
+.sidebar-footer a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.sidebar-footer a:hover {
+  opacity: 0.7;
+} 
 
 /* ═══════════════════════════════════
    HAMBURGER (mobile only)
@@ -819,7 +830,7 @@ body::before {
     <li><a href="fotografies.html" class="active">Το Ιατρείο</a></li>
     <li><a href="epikoinonia.html">Επικοινωνία</a></li>
   </ul>
-  <div class="sidebar-footer">&copy; 2025 Κωνσταντίνος Πολυχρονίδης</div>
+  <div class="sidebar-footer">&copy; 2025 Κωνσταντίνος Πολυχρονίδης<br><a href="/pages/privacy.html">Πολιτική Απορρήτου</a></div>
 </aside>
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
 <button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Μενού">
