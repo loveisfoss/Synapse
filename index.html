@@ -25,6 +25,22 @@
   "@graph": [
 
     {
+      "@type": "WebSite",
+      "@id": "https://polychronidis-neurology.gr/#website",
+      "name": "Νευρολογικό Ιατρείο Κωνσταντίνου Πολυχρονίδη",
+      "url": "https://polychronidis-neurology.gr/",
+      "inLanguage": "el",
+      "publisher": {
+        "@id": "https://polychronidis-neurology.gr/#clinic"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://polychronidis-neurology.gr/pages/pathiseis.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+
+    {
       "@type": "Physician",
       "@id": "https://polychronidis-neurology.gr/#physician",
       "name": "Κωνσταντίνος Πολυχρονίδης",
@@ -202,11 +218,28 @@
         "code": "G35",
         "codingSystem": "ICD-10"
       }
+    },
+
+    {
+      "@type": "ItemList",
+      "@id": "https://polychronidis-neurology.gr/#medical-hub",
+      "name": "Νευρολογικές Παθήσεις",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "item": "https://polychronidis-neurology.gr/#als" },
+        { "@type": "ListItem", "position": 2, "item": "https://polychronidis-neurology.gr/#parkinson" },
+        { "@type": "ListItem", "position": 3, "item": "https://polychronidis-neurology.gr/#epilepsy" },
+        { "@type": "ListItem", "position": 4, "item": "https://polychronidis-neurology.gr/#dementia" },
+        { "@type": "ListItem", "position": 5, "item": "https://polychronidis-neurology.gr/#vertigo" },
+        { "@type": "ListItem", "position": 6, "item": "https://polychronidis-neurology.gr/#headache" },
+        { "@type": "ListItem", "position": 7, "item": "https://polychronidis-neurology.gr/#narcolepsy" },
+        { "@type": "ListItem", "position": 8, "item": "https://polychronidis-neurology.gr/#psychosomatic" },
+        { "@type": "ListItem", "position": 9, "item": "https://polychronidis-neurology.gr/#ms" }
+      ]
     }
 
   ]
 }
-  </script>
+</script>
   <style>
   @font-face { font-family: 'Lato'; font-style: normal; font-weight: 300; font-display: swap; src: url('/assets/fonts/lato-300.woff2') format('woff2'); }
   @font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; font-display: swap; src: url('/assets/fonts/lato-400.woff2') format('woff2'); }
