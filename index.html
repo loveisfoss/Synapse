@@ -22,81 +22,151 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["Physician", "MedicalBusiness"],
-  "@id": "https://polychronidis-neurology.gr/#physician",
-  "name": "Κωνσταντίνος Πολυχρονίδης",
-  "description": "Νευρολόγος στην Κατερίνη. Απόφοιτος Ιατρικής Σχολής ΑΠΘ, ειδικευθείς στο North Älvsborg County Hospital, Trollhättan, Σουηδία.",
-  "url": "https://polychronidis-neurology.gr/",
-  "image": "https://polychronidis-neurology.gr/assets/images/preview.jpeg",
-  "telephone": "+302351105725",
-  "priceRange": "€€",
-    
-    "medicalSpecialty": {
-    "@type": "MedicalSpecialty",
-    "@id": "https://schema.org/Neurology"
-  },
-    
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "25ης Μαρτίου 12",
-    "addressLocality": "Κατερίνη",
-    "postalCode": "60132",
-    "addressCountry": "GR"
-  },
+  "@graph": [
 
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 40.2704275,
-    "longitude": 22.5095192
-  },
-
-  "areaServed": {
-    "@type": "City",
-    "name": "Κατερίνη"
-  },
-
-  "hasMap": "https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7",
-
-  "sameAs": [
-  "https://www.instadoctor.gr/doctor/polychronidis-konstantinos"
-  ],
-
-  "knowsLanguage": ["el", "en", "sv"],
-
-  "openingHoursSpecification": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Wednesday"],
-      "opens": "09:00",
-      "closes": "14:00"
+      "@type": "Physician",
+      "@id": "https://polychronidis-neurology.gr/#physician",
+      "name": "Κωνσταντίνος Πολυχρονίδης",
+      "description": "Νευρολόγος στην Κατερίνη. Απόφοιτος Ιατρικής Σχολής ΑΠΘ, ειδικευθείς στο North Älvsborg County Hospital, Trollhättan, Σουηδία.",
+      "url": "https://polychronidis-neurology.gr/",
+      "image": "https://polychronidis-neurology.gr/assets/images/preview.jpeg",
+      "telephone": "+302351105725",
+      "medicalSpecialty": {
+        "@type": "MedicalSpecialty",
+        "@id": "https://schema.org/Neurology"
+      },
+      "worksFor": {
+        "@id": "https://polychronidis-neurology.gr/#clinic"
+      },
+      "sameAs": [
+        "https://www.instadoctor.gr/doctor/polychronidis-konstantinos"
+      ],
+      "knowsLanguage": ["el", "en", "sv"]
     },
+
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Thursday"],
-      "opens": "11:00",
-      "closes": "14:00"
+      "@type": "MedicalOrganization",
+      "@id": "https://polychronidis-neurology.gr/#clinic",
+      "name": "Νευρολογικό Ιατρείο Κωνσταντίνου Πολυχρονίδη",
+      "url": "https://polychronidis-neurology.gr/",
+      "image": "https://polychronidis-neurology.gr/assets/images/preview.jpeg",
+      "telephone": "+302351105725",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "25ης Μαρτίου 12",
+        "addressLocality": "Κατερίνη",
+        "postalCode": "60132",
+        "addressCountry": "GR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 40.2704275,
+        "longitude": 22.5095192
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Κατερίνη"
+      },
+      "hasMap": "https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Wednesday"],
+          "opens": "09:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Thursday"],
+          "opens": "11:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Thursday"],
+          "opens": "18:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "09:00",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "18:00",
+          "closes": "21:00"
+        }
+      ]
     },
+
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Thursday"],
-      "opens": "18:00",
-      "closes": "21:00"
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#als",
+      "name": "Νόσος του Κινητικού Νευρώνα",
+      "alternateName": ["ALS", "Amyotrophic Lateral Sclerosis"],
+      "code": {
+        "@type": "MedicalCode",
+        "code": "G12.2",
+        "codingSystem": "ICD-10"
+      }
     },
+
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Friday",
-      "opens": "09:00",
-      "closes": "14:00"
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#parkinson",
+      "name": "Νόσος Πάρκινσον"
     },
+
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Friday",
-      "opens": "18:00",
-      "closes": "21:00"
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#epilepsy",
+      "name": "Επιληψία"
+    },
+
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#dementia",
+      "name": "Άνοια"
+    },
+
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#vertigo",
+      "name": "Ίλιγγος"
+    },
+
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#headache",
+      "name": "Κεφαλαλγία"
+    },
+
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#narcolepsy",
+      "name": "Ναρκοψία"
+    },
+
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#psychosomatic",
+      "name": "Ψυχοσωματικές Διαταραχές"
+    },
+
+    {
+      "@type": "MedicalCondition",
+      "@id": "https://polychronidis-neurology.gr/#ms",
+      "name": "Σκλήρυνση κατά Πλάκας"
     }
+
   ]
 }
-  </script>
+</script>
   <style>
   @font-face { font-family: 'Lato'; font-style: normal; font-weight: 300; font-display: swap; src: url('/assets/fonts/lato-300.woff2') format('woff2'); }
   @font-face { font-family: 'Lato'; font-style: normal; font-weight: 400; font-display: swap; src: url('/assets/fonts/lato-400.woff2') format('woff2'); }
