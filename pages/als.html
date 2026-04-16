@@ -29,13 +29,37 @@
   "about": {
     "@type": "MedicalCondition",
     "name": "Νόσος του Κινητικού Νευρώνα",
-    "alternateName": "Motor Neuron Disease"
+    "alternateName": ["ALS", "Motor Neuron Disease", "Amyotrophic Lateral Sclerosis", "Νόσος Lou Gehrig"],
+    "associatedAnatomy": {
+      "@type": "AnatomicalStructure",
+      "name": "Κινητικός Νευρώνας"
+    },
+    "code": {
+      "@type": "MedicalCode",
+      "code": "G12.2",
+      "codingSystem": "ICD-10"
+    }
   },
   "author": {
     "@type": "Physician",
     "name": "Κωνσταντίνος Πολυχρονίδης",
-    "url": "https://polychronidis-neurology.gr/"
+    "@id": "https://polychronidis-neurology.gr/#physician",
+    "url": "https://polychronidis-neurology.gr/",
+    "medicalSpecialty": "Neurology"
   },
+  "publisher": {
+    "@type": "MedicalOrganization",
+    "name": "Νευρολογικό Ιατρείο Κωνσταντίνου Πολυχρονίδη",
+    "url": "https://polychronidis-neurology.gr/"
+  },  
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://polychronidis-neurology.gr/pages/als.html"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ["h1", ".content"]
+  },  
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
