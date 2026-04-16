@@ -19,18 +19,19 @@
   <link rel="shortcut icon" href="/assets/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/assets/site.webmanifest" />
-  <script type="application/ld+json">
+ <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Physician",
+  "@type": ["Physician", "MedicalBusiness"],
+  "@id": "https://polychronidis-neurology.gr/#physician",
   "name": "Κωνσταντίνος Πολυχρονίδης",
   "description": "Νευρολόγος στην Κατερίνη. Απόφοιτος Ιατρικής Σχολής ΑΠΘ, ειδικευθείς στο North Älvsborg County Hospital, Trollhättan, Σουηδία.",
   "url": "https://polychronidis-neurology.gr/",
   "image": "https://polychronidis-neurology.gr/assets/images/preview.jpeg",
-  "medicalSpecialty": {
-    "@type": "MedicalSpecialty",
-    "name": "Neurology"
-  },
+  "medicalSpecialty": "Neurology",
+  "telephone": "+302351105725",
+  "priceRange": "€€",
+
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "25ης Μαρτίου 12",
@@ -38,11 +39,30 @@
     "postalCode": "60132",
     "addressCountry": "GR"
   },
-  "telephone": "+302351105725",
+
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.2704275,
+    "longitude": 22.5095192
+  },
+
+  "areaServed": {
+    "@type": "City",
+    "name": "Κατερίνη"
+  },
+
+  "hasMap": "https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7",
+
+  "sameAs": [
+    "https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7"
+  ],
+
+  "knowsLanguage": ["el", "en", "sv"],
+
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Wednesday", "Friday"],
+      "dayOfWeek": ["Monday", "Wednesday"],
       "opens": "09:00",
       "closes": "14:00"
     },
@@ -54,21 +74,25 @@
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Thursday", "Friday"],
+      "dayOfWeek": ["Tuesday", "Thursday"],
+      "opens": "18:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "09:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
       "opens": "18:00",
       "closes": "21:00"
     }
-  ],
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 40.2704275,
-    "longitude": 22.5095192
-  },
-  "sameAs": [
-    "https://maps.app.goo.gl/yEhxJk4TZJAVFTWn7"
   ]
 }
-  </script>
+</script>
   <link rel="preload" href="/assets/fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
