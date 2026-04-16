@@ -21,21 +21,48 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalWebPage",
+  "@type": "CollectionPage",
+  "@id": "https://polychronidis-neurology.gr/pages/pathiseis.html#hub",
   "name": "Νευρολογικές Παθήσεις — Γενικές Πληροφορίες",
   "description": "Γενικές πληροφορίες για νευρολογικές παθήσεις από τον νευρολόγο Κωνσταντίνο Πολυχρονίδη στην Κατερίνη.",
   "url": "https://polychronidis-neurology.gr/pages/pathiseis.html",
   "inLanguage": "el",
+
+  "mainEntity": [
+    { "@id": "https://polychronidis-neurology.gr/#als" },
+    { "@id": "https://polychronidis-neurology.gr/#parkinson" },
+    { "@id": "https://polychronidis-neurology.gr/#epilepsy" },
+    { "@id": "https://polychronidis-neurology.gr/#dementia" },
+    { "@id": "https://polychronidis-neurology.gr/#vertigo" },
+    { "@id": "https://polychronidis-neurology.gr/#headache" },
+    { "@id": "https://polychronidis-neurology.gr/#narcolepsy" },
+    { "@id": "https://polychronidis-neurology.gr/#psychosomatic" },
+    { "@id": "https://polychronidis-neurology.gr/#ms" }
+  ],
+
   "author": {
-    "@type": "Physician",
-    "name": "Κωνσταντίνος Πολυχρονίδης",
-    "url": "https://polychronidis-neurology.gr/"
+    "@id": "https://polychronidis-neurology.gr/#physician"
   },
+
+  "publisher": {
+    "@id": "https://polychronidis-neurology.gr/#clinic"
+  },
+
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Αρχική", "item": "https://polychronidis-neurology.gr/" },
-      { "@type": "ListItem", "position": 2, "name": "Νευρολογικές Παθήσεις", "item": "https://polychronidis-neurology.gr/pages/pathiseis.html" }
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Αρχική",
+        "item": "https://polychronidis-neurology.gr/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Νευρολογικές Παθήσεις",
+        "item": "https://polychronidis-neurology.gr/pages/pathiseis.html"
+      }
     ]
   }
 }
