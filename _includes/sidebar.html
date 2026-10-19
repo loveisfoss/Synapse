@@ -1,0 +1,31 @@
+{%- assign in_conditions = false -%}
+{%- for c in site.data.navigation.conditions -%}{%- if c.url == page.url -%}{%- assign in_conditions = true -%}{%- endif -%}{%- endfor -%}
+<aside class="sidebar" id="sidebar">
+  <a class="sidebar-brand" href="/">
+    <span class="sb-name">Κωνσταντίνος Πολυχρονίδης</span>
+    <span class="sb-title">Νευρολόγος</span>
+  </a>
+  <ul class="sidebar-nav">
+    <li><a href="{{ site.data.navigation.home.url }}"{% if page.url == site.data.navigation.home.url %} class="active"{% endif %}>{{ site.data.navigation.home.title }}</a></li>
+    <li>
+      <button onclick="toggleSubmenu(this)" class="{% if in_conditions %}active {% endif %}open" aria-label="{{ site.data.navigation.conditions_title }} — ανάπτυξη υπομενού">
+        {{ site.data.navigation.conditions_title }}
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <ul class="submenu open">
+        {%- for c in site.data.navigation.conditions %}
+        <li><a href="{{ c.url }}"{% if page.url == c.url %} class="active"{% endif %}>{{ c.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </li>
+    {%- for p in site.data.navigation.pages %}
+    <li><a href="{{ p.url }}"{% if page.url == p.url %} class="active"{% endif %}>{{ p.title }}</a></li>
+    {%- endfor %}
+  </ul>
+  <div class="sidebar-footer">&copy; {{ site.time | date: "%Y" }} Κωνσταντίνος Πολυχρονίδης<br><a href="{{ site.data.navigation.privacy.url }}">{{ site.data.navigation.privacy.title }}</a></div>
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+<button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Μενού">
+  <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></svg>
+</button>

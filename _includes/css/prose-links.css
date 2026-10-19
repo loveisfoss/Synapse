@@ -1,0 +1,3 @@
+/* prose-links.css — Styled links inside text (privacy page) */
+.prose a { color: var(--accent); text-decoration: none; transition: opacity 0.2s; }
+.prose a:hover { opacity: 0.7; }

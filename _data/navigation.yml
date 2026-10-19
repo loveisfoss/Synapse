@@ -1,0 +1,29 @@
+# Sidebar menu — edit here once, every page updates.
+
+home:
+  title: Αρχική Σελίδα
+  url: /
+
+conditions_title: Νευρολογικές παθήσεις
+
+conditions:
+  - { title: Γενικές πληροφορίες,        url: /pages/pathiseis.html }
+  - { title: Κεφαλαλγία,                 url: /pages/kefalalgia.html }
+  - { title: Ίλιγγος,                    url: /pages/iligos.html }
+  - { title: Νόσος Parkinson,            url: /pages/parkinson.html }
+  - { title: Άνοια,                      url: /pages/anoia.html }
+  - { title: Επιληψία,                   url: /pages/epilipsia.html }
+  - { title: Σκλήρυνση κατά Πλάκας,      url: /pages/sklirynsi.html }
+  - { title: Εγκεφαλικό Επεισόδιο,       url: /pages/egkefaliko.html }
+  - { title: Νόσος του Κινητικού Νευρώνα, url: /pages/als.html }
+  - { title: Ναρκοληψία,                 url: /pages/narkolipsia.html }
+  - { title: Ψυχοσωματικές διαταραχές,   url: /pages/psyxosomatika.html }
+
+pages:
+  - { title: Βιογραφικό Σημείωμα, url: /pages/biografiko.html }
+  - { title: Το Ιατρείο,          url: /pages/fotografies.html }
+  - { title: Επικοινωνία,         url: /pages/epikoinonia.html }
+
+privacy:
+  title: Πολιτική Απορρήτου
+  url: /pages/privacy.html

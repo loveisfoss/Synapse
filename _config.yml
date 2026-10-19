@@ -1,0 +1,13 @@
+# Site-wide settings
+title: Κωνσταντίνος Πολυχρονίδης — Νευρολόγος
+url: https://polychronidis-neurology.gr
+lang: el
+
+# GoatCounter endpoint (cookieless, privacy-friendly statistics).
+# Leave empty ("") to switch statistics off.
+goatcounter: "https://neurometrics.goatcounter.com/count"
+
+# Files that must not be published
+exclude:
+  - README.md
+  - .gitignore

@@ -1,0 +1,17 @@
+/* content.css — Text pages: title, subtitle, prose, back link */
+.page-wrap { max-width: 700px; margin: 0 auto; padding: 64px 40px 80px; }
+.page-title { font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 300; letter-spacing: 0.06em; color: var(--text-primary); margin-bottom: 8px; opacity: 0; transform: translateY(14px); animation: fadeUp 0.9s ease forwards; }
+.page-subtitle { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 28px; opacity: 0; animation: fadeIn 0.9s 0.2s ease forwards; }
+.prose { font-size: clamp(0.95rem, 1.8vw, 1.05rem); color: var(--text-secondary); line-height: 1.9; font-weight: 300; opacity: 0; transform: translateY(10px); animation: fadeUp 0.8s 0.4s ease forwards; }
+.prose p { margin-bottom: 1.4em; }
+.prose p:last-child { margin-bottom: 0; }
+.prose h2 { font-size: 0.7rem; font-weight: 700; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin: 3.2em 0 0.9em; padding-top: 1.2em; border-top: 1px solid rgba(255,255,255,0.07); }
+.prose h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+.prose ul { padding-left: 1.2em; margin-bottom: 1.4em; }
+.prose ul li { margin-bottom: 0.5em; }
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); text-decoration: none; margin-bottom: 32px; opacity: 0; animation: fadeIn 0.8s 0.1s ease forwards; transition: opacity 0.2s; }
+.back-link:hover { opacity: 0.7; }
+.back-link svg { width:13px; height:13px; stroke:currentColor; fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+@media (max-width: 768px) {
+  .page-wrap { padding: 90px 20px 52px; }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }}</title>
+  {%- if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+  {%- endif %}
+  <meta name="robots" content="{{ page.robots | default: 'index, follow' }}" />
+  {%- if page.url == "/" %}
+  <meta name="google-site-verification" content="NCZT-JxTuAEmT2rWlP5502zaeMANfSBpkQu9mtClsZ0" />
+  <meta name="msvalidate.01" content="A2C9302614E5E0739409E2723B82DF5E" />
+  {%- endif %}
+  {%- if page.canonical %}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.canonical }}" />
+  <meta property="og:title" content="{{ page.og_title | default: page.title }}" />
+  <meta property="og:description" content="{{ page.og_description | default: page.description }}" />
+  <meta property="og:image" content="https://polychronidis-neurology.gr/assets/images/preview.jpeg" />
+  <meta property="og:locale" content="el_GR" />
+  <link rel="canonical" href="{{ page.canonical }}" />
+  {%- endif %}
+  {%- if page.preload_image %}
+  <link rel="preload" href="{{ page.preload_image }}" as="image" fetchpriority="high" />
+  {%- endif %}
+  <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/assets/site.webmanifest" />
+  {%- if page.jsonld %}
+  <script type="application/ld+json">
+{{ page.jsonld }}
+  </script>
+  {%- endif %}
+  <style>
+{% include css/fonts.css %}
+  </style>
+  <style>
+{% include css/base.css %}
+{%- if page.css contains "content" %}
+{% include css/content.css %}
+{%- endif %}
+{%- if page.css contains "prose-links" %}
+{% include css/prose-links.css %}
+{%- endif %}
+{%- if page.css contains "home" %}
+{% include css/home.css %}
+{%- endif %}
+{%- if page.css contains "diseases" %}
+{% include css/diseases.css %}
+{%- endif %}
+{%- if page.css contains "contact" %}
+{% include css/contact.css %}
+{%- endif %}
+{%- if page.css contains "gallery" %}
+{% include css/gallery.css %}
+{%- endif %}
+{%- if page.css contains "notfound" %}
+{% include css/notfound.css %}
+{%- endif %}
+  </style>
+</head>
+<body>
+{% include sidebar.html %}
+{{ content }}
+<script src="/assets/js/site.js" defer></script>
+{%- if page.scripts contains "maps" %}
+<script src="/assets/js/maps.js" defer></script>
+{%- endif %}
+{%- if page.scripts contains "lightbox" %}
+<script src="/assets/js/lightbox.js" defer></script>
+{%- endif %}
+{%- if site.goatcounter and site.goatcounter != "" %}
+<script data-goatcounter="{{ site.goatcounter }}" async src="https://gc.zgo.at/count.js"></script>
+{%- endif %}
+</body>
+</html>
