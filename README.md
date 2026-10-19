@@ -9,7 +9,6 @@ Jekyll site (built automatically by GitHub Pages — no local setup needed).
 | `<head>` (meta, favicons, canonical, Open Graph, JSON-LD), page skeleton, script loading | `_layouts/default.html` |
 | Sidebar + hamburger | `_includes/sidebar.html` |
 | Sidebar menu entries (add a new condition page here) | `_data/navigation.yml` |
-| GoatCounter endpoint / switch statistics off | `_config.yml` → `goatcounter` |
 | Shared CSS (all pages) | `_includes/css/base.css` |
 | CSS for one kind of page | `_includes/css/content.css`, `home.css`, `diseases.css`, `contact.css`, `gallery.css`, `notfound.css`, `prose-links.css` |
 | Sidebar behaviour (JS) | `assets/js/site.js` |
@@ -32,4 +31,4 @@ jsonld: |                 # optional: structured data for <head>
 
 ## Notes
 - Do not add a `.nojekyll` file: it would switch the layout system off.
-- Statistics use GoatCounter (no cookies, no banner). Described in the privacy policy.
+- This version has no analytics and no cookie banner.
